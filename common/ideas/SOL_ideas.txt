@@ -4,7 +4,7 @@ ideas = {
     padlock = {
       picture = padlock
       allowed = {
-				tag = event_target:solar_empire
+				original_tag = SOL
       }
       available = {
         has_government = fascism
@@ -16,7 +16,7 @@ ideas = {
     dottedline = {
       picture = dottedline
       allowed = {
-        tag = event_target:solar_empire
+        original_tag = SOL
       }
 
       traits = { armaments_organizer }
@@ -24,7 +24,7 @@ ideas = {
 
     evil_twilight_sparkle = {
       allowed = {
-        tag = event_target:solar_empire
+        original_tag = SOL
       }
       available = {
         has_country_leader = { ruling_only = yes name = "Daybreaker" }
@@ -46,7 +46,7 @@ ideas = {
 		scope = {
 
 		allowed = {
-			tag = event_target:solar_empire
+			original_tag = SOL
 		}
 
 		available = {
@@ -62,7 +62,7 @@ ideas = {
     sunset_shimmer = {
 
 		allowed = {
-			tag = event_target:solar_empire
+			original_tag = SOL
 		}
 
 		available = {
@@ -82,7 +82,7 @@ ideas = {
 		benevelle = {
 
 			allowed = {
-					tag = event_target:solar_empire
+					original_tag = SOL
 			}
 
 			available = {
@@ -97,7 +97,7 @@ ideas = {
     summersweet = {
 
     allowed = {
-      tag = event_target:solar_empire
+      original_tag = SOL
     }
 
     available = {
@@ -113,7 +113,7 @@ ideas = {
     morninglight = {
 
     allowed = {
-      tag = event_target:solar_empire
+      original_tag = SOL
     }
 
     available = {
@@ -129,7 +129,7 @@ ideas = {
     sunnyflare = {
 
     allowed = {
-      tag = event_target:solar_empire
+      original_tag = SOL
     }
 
     available = {
@@ -148,7 +148,7 @@ ideas = {
     wind_rider = {
 
       allowed = {
-        tag = event_target:solar_empire
+        original_tag = SOL
       }
 
       available = {
@@ -165,7 +165,7 @@ ideas = {
     arcane_nova = {
 
       allowed = {
-        tag = event_target:solar_empire
+        original_tag = SOL
       }
 
       available = {
@@ -186,7 +186,7 @@ ideas = {
 
 		blaze = {
 			allowed = {
-				tag = event_target:solar_empire
+				original_tag = SOL
 			}
       available = {
         has_completed_focus = SOL_air_force
@@ -204,7 +204,7 @@ ideas = {
 
     thunderlane = {
 			allowed = {
-				tag = event_target:solar_empire
+				original_tag = SOL
 			}
       available = {
         has_completed_focus = SOL_air_force
@@ -230,14 +230,14 @@ ideas = {
   			}
   			available = {
   				OR = {
-						tag = event_target:solar_empire
+						original_tag = SOL
 						AND = {
   						original_tag = NLR
-							has_war_with = event_target:solar_empire
+							has_war_with = SOL
 						}
 						AND = {
-  						tag = event_target:equestria
-							has_war_with = event_target:solar_empire
+  						original_tag = EQS
+							has_war_with = SOL
 						}
   					AND = {
   						eqs_has_civil_war = yes
@@ -254,6 +254,7 @@ ideas = {
   			modifier = {
   				training_time_army_factor = 0.1
   				army_morale_factor = -0.1
+  				stability_factor = -0.25
   				industrial_capacity_factory = -0.25
   				production_factory_max_efficiency_factor = -0.10
   				production_speed_buildings_factor = -0.3
@@ -303,7 +304,7 @@ ideas = {
 			removal_cost = -1
 			#picture = FRA_national_mobilization_focus
 			modifier = {
-        stability_factor = -0.1
+        stability_factor = -0.15
         political_power_cost = 0.15
 			}
 		}
@@ -827,8 +828,8 @@ ideas = {
 		 heat_attrition_factor = 0.1
 		}
     available = {
-      has_war_with = event_target:solar_empire
-      event_target:solar_empire = { has_country_leader = { ruling_only = yes name = "Daybreaker" } }
+      has_war_with = SOL
+      SOL = { exists = yes has_country_leader = { ruling_only = yes name = "Daybreaker" } }
 		}
   }
 	}

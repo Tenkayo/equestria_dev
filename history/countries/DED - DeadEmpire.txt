@@ -4,7 +4,6 @@ set_research_slots = 1
 
 set_technology = {
 	melee_weapons = 1
-	ded_width = 1
 }
 
 set_convoys = 70
@@ -12,20 +11,20 @@ set_politics = {
 
 	parties = {
 		democratic = {
-			popularity = 0
+			popularity = 10
 		}
 
 		fascism = {
-			popularity = 100
+			popularity = 65
 		}
 
 		communism = {
-			popularity = 0
+			popularity = 5
 			#banned = no #default is no
 		}
 
 		neutrality = {
-			popularity = 0
+			popularity = 20
 		}
 	}
 
@@ -35,7 +34,7 @@ set_politics = {
 	elections_allowed = no
 }
 set_country_flag = trade_laws_blocked
-set_country_flag = { flag = DED_killed_nations value = 0 }
+modify_country_flag = { flag = DED_killed_nations value = 0 }
 add_ideas = {
 	magehold
 	detached_country
@@ -44,7 +43,7 @@ add_ideas = {
 	closed_economy
 }
 
-set_stability = 0.25
+set_stability = 0.20
 
 create_country_leader = {
 	name = "Necromancer Council"
@@ -59,7 +58,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Rosa Maledicta"
 	desc = "POLITICS_DITAFASH"
-	picture = "Rosa_old.tga"
+	picture = "Governor.tga"
 	expire = "1965.1.1"
 	ideology = falangism
 	traits = {
@@ -91,7 +90,7 @@ create_country_leader = {
 
 create_corps_commander = {
 	name = "Volgar Bloodhoof"
-	picture = "Nezhit.tga"
+	picture = "Governor.tga"
 	traits = { old_guard }
 	skill = 2
 	attack_skill = 3
@@ -105,9 +104,9 @@ create_corps_commander = {
 	traits = { }
 	skill = 1
 	attack_skill = 1
-    defense_skill = 2
+    defense_skill = 1
     planning_skill = 1
-    logistics_skill = 3
+    logistics_skill = 1
 }
 
 add_equipment_to_stockpile = { type = melee_equipment_0 amount = 6000 producer = DED }

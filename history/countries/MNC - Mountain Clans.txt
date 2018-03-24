@@ -10,6 +10,7 @@ set_technology = {
 	pre_gw_artillery = 1
 	tech_recon = 1
 	tech_support = 1
+	gw_artillery = 1
 	tech_mountaineers = 1
 }
 
@@ -18,61 +19,58 @@ set_politics = {
 
 	parties = {
 		democratic = {
-			popularity = 5
+			popularity = 25
 		}
 
 		fascism = {
-			popularity = 70
+			popularity = 25
 		}
 
 		communism = {
-			popularity = 5
+			popularity = 25
 			#banned = no #default is no
 		}
 
 		neutrality = {
-			popularity = 20
+			popularity = 25
 		}
 	}
 
-	ruling_party = fascism
+	ruling_party = neutrality
 	last_election = "1000.10.10"
 	election_frequency = 36
 	elections_allowed = no
 }
 add_ideas = {
-              MNC_banditry
-			  MNC_economy
-			  lack_of_scientists1
+              feudalism
+			  lack_of_scientists
               pre_industrial_society }
 
-set_stability = 0.80
-set_war_support = 0.60
+set_stability = 0.55
 
 create_country_leader = {
-	name = "Eriviar Sunstriker"
+	name = "Eriviara Sunstriker"
 	desc = ""
-	picture = "Sunstriker.tga"
+	picture = "Governor.tga"
 	expire = "1965.1.1"
 	ideology = despotism
 	traits = {
-	deranged
 	}
 }
 
 create_country_leader = {
-	name = "Eriviar Sunstriker"
+	name = "Eriviara Sunstriker"
 
-	picture = "Sunstriker.tga"
+	picture = "Governor.tga"
 	expire = "1965.1.1"
  ideology = nazism
 	traits = {
-    deranged
+
 	}
 }
 
 create_country_leader = {
-	name = "Runa Teafeather"
+	name = "Eriviara Sunstriker"
 	desc = ""
 	picture = "Governor.tga"
 	expire = "1965.1.1"

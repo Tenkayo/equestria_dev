@@ -15,23 +15,23 @@
 }
 units = {
 	division = {
-		name = "Griffon's Militia of Skynavia"
+		name = "Communist Militia"
 		location = 237
 		division_template = "Communist Militia"
 		start_experience_factor = 0.3 }
 	division = {
-		name = "Border Guard"
-		location = 1943
+		name = "Communist Militia"
+		location = 88
 		division_template = "Communist Militia"
 		start_experience_factor = 0.3 }
 	division = {
-		name = "2nd Border Guard"
-		location = 4413
+		name = "Communist Militia"
+		location = 13087
 		division_template = "Communist Militia"
 		start_experience_factor = 0.3 }
 	division = {
-		name = "'The Griffon Revolution' Division"
-		location = 1737
+		name = "Communist Militia"
+		location = 7654
 		division_template = "Communist Militia"
 		start_experience_factor = 0.3 }
 }

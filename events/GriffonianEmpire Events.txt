@@ -1201,9 +1201,11 @@ country_event = {
 	ai_chance = { factor = 80 }
     name = imperial.53.a
 	add_political_power = -50
-	event_target:JER_Maxon = {
-		limit = { has_id = 75653 }
-		set_nationality = ROOT
+	JER = {
+		random_unit_leader = {
+			limit = { has_id = 75653 }
+			set_nationality = ROOT
+		}
 	}
 	hidden_effect = { set_country_flag = GRI_aquileian_vassal }
     }
@@ -1409,9 +1411,11 @@ country_event = { #Rodier and Aquileia
 					   ideology = fascism_ideology
 					   traits = { marshal }
 				}
-				event_target:JER_Maxon = {
-					limit = { has_id = 75653 }
-					set_nationality = PREV
+				ROOT = {
+					random_unit_leader = {
+						limit = { has_id = 75653 }
+						set_nationality = PREV
+					}
 				}
 				set_politics = { ruling_party = fascism elections_allowed = no }
 				add_popularity = {
@@ -1481,9 +1485,11 @@ country_event = { #Rodier's Rebellion
 					ideology = fascism_ideology
 					traits = { marshal }
 				}
-				event_target:JER_Maxon = {
-					limit = { has_id = 75653 }
-					set_nationality = PREV
+				ROOT = {
+					random_unit_leader = {
+						limit = { has_id = 75653 }
+						set_nationality = PREV
+					}
 				}
 				set_politics = { ruling_party = fascism elections_allowed = no }
 				add_popularity = {

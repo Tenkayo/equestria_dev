@@ -803,10 +803,7 @@ focus = {
 			focus = BAL_chafer focus = BAL_delicious
 		}
 		bypass = {
-			NOT = { 
-				country_exists = EQS 
-				EQS = { has_government = democratic }
-			}
+			NOT = { country_exists = EQS }
 		}
 		x = 4
 		y = 10

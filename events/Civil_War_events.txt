@@ -5,7 +5,7 @@ country_event = {
 	trigger = {
 		has_idea = disrupted_communications
 		has_war = no
-		eqs_not_has_civil_war = yes
+		NOT = { eqs_has_civil_war = yes }
 	}
 	hidden = yes
 
@@ -31,7 +31,7 @@ country_event = {
 			ROOT = { transfer_technology = yes }
 		}
 		if = {
-			limit = { tag = event_target:solar_empire is_ai = yes }
+			limit = { tag = SOL is_ai = yes }
 			Evil_unicorn_magic = yes
 		}
 	}
@@ -61,9 +61,12 @@ country_event = {
     hidden = yes
 
     trigger = {
-			tag = EQS
+			OR = {
+				tag = EQS
+				tag = SOL
+			}
       has_war = yes
-      #has_completed_focus = All_ponies_front
+      has_completed_focus = All_ponies_front
       OR = {
         has_government = democratic
         has_government = communism
@@ -76,6 +79,7 @@ country_event = {
         NOT = { has_country_flag = refused_eqs_ceasefire }
         NOT = { tag = NLR }
 				NOT = { tag = EQS }
+				NOT = { tag = SOL }
         NOT = { tag = NMS }
         is_eqs_civil_war_tag = yes
         has_defensive_war_with = ROOT
@@ -186,8 +190,22 @@ country_event = {
     #Sure, ceasefire sounds nice
     option = {
       name = civwar.102.a
-      hidden_effect = { set_country_flag = eqs_ceasefire }
-      set_truce = { target = FROM days = 36000 }
+      set_country_flag = eqs_ceasefire
+      white_peace = FROM
+      hidden_effect = {
+        FROM = {
+          every_owned_state = {
+            limit = { is_controlled_by = ROOT }
+            ROOT = { transfer_state = PREV }
+          }
+        }
+        ROOT = {
+          every_owned_state = {
+            limit = { is_controlled_by = FROM }
+            FROM = { transfer_state = PREV }
+          }
+        }
+      }
 
       ai_chance = {
         factor = 50
@@ -254,7 +272,6 @@ country_event = {
     }
 }
 
-#TODO CHANGE
 country_event = {
     id = civwar.105
     title = civwar.105.t
@@ -263,11 +280,7 @@ country_event = {
 
     trigger = {
       has_country_flag = eqs_ceasefire
-      NOT = {
-        any_enemy_country = {
-          NOT = { tag = EQS }
-        }
-      }
+      has_war = no
     }
 
     mean_time_to_happen = {
@@ -281,7 +294,7 @@ country_event = {
     option = {
       name = civwar.105.a
 			trigger = { country_exists = EQS }
-      hidden_effect = { EQS = { set_truce = { target = ROOT days = 1 } } }
+      declare_war_on = { target = EQS type = annex_everything }
       ai_chance = {
         factor = 50
         modifier = {
@@ -303,12 +316,33 @@ country_event = {
       }
     }
 
+		option = {
+      name = civwar.105.a
+			trigger = { country_exists = SOL }
+      declare_war_on = { target = SOL type = annex_everything }
+      ai_chance = {
+        factor = 50
+        modifier = {
+          factor = 2
+          has_government = fascism
+        }
+        modifier = {
+          factor = 2
+          strength_ratio = { tag = SOL ratio > 0.9 }
+        }
+        modifier = {
+          factor = 0.5
+          strength_ratio = { tag = SOL ratio < 0.7 }
+        }
+        modifier = {
+          factor = 0
+          strength_ratio = { tag = SOL ratio < 0.5 }
+        }
+      }
+    }
+
     option = {
       name = civwar.105.b
-      hidden_effect = { 
-        set_country_flag = eqs_kept_ceasefire 
-        set_country_flag = { flag = eqs_kept_ceasefire_cooldown days = 120 }
-      }
       ai_chance = {
         factor = 50
         modifier = {
@@ -388,8 +422,22 @@ country_event = {
     #Sure, ceasefire sounds nice
     option = {
       name = civwar.103.b
-      hidden_effect = { set_country_flag = eqs_ceasefire }
-      set_truce = { target = FROM days = 36000 }
+      white_peace = FROM
+      set_country_flag = eqs_ceasefire
+      hidden_effect = {
+        FROM = {
+          every_owned_state = {
+            limit = { is_controlled_by = ROOT }
+            ROOT = { transfer_state = PREV }
+          }
+        }
+        ROOT = {
+          every_owned_state = {
+            limit = { is_controlled_by = FROM }
+            FROM = { transfer_state = PREV }
+          }
+        }
+      }
       ai_chance = {
         factor = 50
         modifier = {
@@ -740,13 +788,7 @@ country_event = { # BALTIMARE GETS OFFER
     name = civwar.12.a
     EQS = { country_event = { id = equestria.121 days = 1 }
         }
-    ai_chance = { 
-      factor = 85 
-      modifier = {
-        is_in_faction_with = EQS
-        factor = 0
-      }
-    }
+    ai_chance = { factor = 85 }
     }
     option = {
     name = civwar.12.b
@@ -842,13 +884,7 @@ country_event = { # SCS GETS OFFER
     EQS_remove_civil_war_ideas = yes
     #load_oob = "SCS_Civil_War"
         }
-    ai_chance = { 
-      factor = 75 
-      modifier = {
-        is_in_faction_with = EQS
-        factor = 0
-      }
-      }
+    ai_chance = { factor = 75 }
     }
     option = {
     name = civwar.16.b

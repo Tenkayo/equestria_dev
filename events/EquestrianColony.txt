@@ -9,11 +9,11 @@ country_event = {
     is_subject = yes
 		OR = {
 			AND = {
-				overlord = { tag = event_target:equestria }
+				overlord = { original_tag = EQS }
 				NOT = { has_country_flag = is_eqs_puppet }
 			}
 			AND = {
-				overlord = { tag = event_target:solar_empire }
+				overlord = { original_tag = SOL }
 				NOT = { has_country_flag = is_sol_puppet }
 			}
 			AND = {
@@ -29,7 +29,7 @@ country_event = {
 
   immediate = {
     if = {
-      limit = { overlord = { tag = event_target:equestria } }
+      limit = { overlord = { original_tag = EQS } }
       clr_country_flag = is_sol_puppet
       set_country_flag = is_eqs_puppet
       clr_country_flag = is_nlr_puppet
@@ -37,7 +37,7 @@ country_event = {
       break = yes
     }
     if = {
-      limit = { overlord = { tag = event_target:solar_empire } }
+      limit = { overlord = { original_tag = SOL } }
       set_country_flag = is_sol_puppet
       clr_country_flag = is_eqs_puppet
       clr_country_flag = is_nlr_puppet

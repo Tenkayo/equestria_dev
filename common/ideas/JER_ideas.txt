@@ -287,7 +287,6 @@ political_advisor = {
 	}
 
 	emeric = {
-		picture = JER_scientist
 		allowed = {
 			original_tag = JER
 			}

@@ -157,7 +157,7 @@ create_country_leader = {
 
 create_field_marshal = {
 	name = "Elias Bronzetail"
-	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_2.dds"
+	picture = "Bronzetail.tga"
 	traits = { old_guard thorough_planner defensive_doctrine }
 	skill = 3
 	attack_skill = 1
@@ -168,7 +168,7 @@ create_field_marshal = {
 
 create_field_marshal = {
 	name = "Erich Helltalon"
-	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_9.dds"
+	picture = "Helltalon.tga"
 	traits = { offensive_doctrine }
 	skill = 2
 	attack_skill = 2
@@ -179,18 +179,19 @@ create_field_marshal = {
 
 create_corps_commander = {
 	name = "August Duskwing"
-	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_13.dds"
+	picture = "August.tga"
 	traits = { fortress_buster bearer_of_artillery }
 	skill = 2
 	attack_skill = 2
     defense_skill = 1
     planning_skill = 1
     logistics_skill = 1
+	female = yes
 }
 
 create_corps_commander = {
 	name = "Anicetus Mudbeak"
-	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_8.dds"
+	picture = "Mudbeak.tga"
 	traits = { trait_engineer }
 	skill = 2
 	attack_skill = 2
@@ -201,7 +202,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Reinhold Thundertail"
-	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_7.dds"
+	picture = "Reinhold.tga"
 	traits = { panzer_leader }
 	skill = 1
 	attack_skill = 2
@@ -212,7 +213,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Cecilia Marshtail"
-	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_6.dds"
+	picture = "Girlgeneral.tga"
 	traits = { commando }
 	skill = 1
 	attack_skill = 1

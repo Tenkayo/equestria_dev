@@ -98,8 +98,8 @@ create_country_leader = {
 }
 
 create_field_marshal = { 
-	name = "Kajetan Bronsfeather"
-	portrait_path = "gfx/leaders/BAN/GriffonPirate.tga"
+	name = "Blackrock"
+	portrait_path = "gfx/leaders/BAN/Blackrock.tga"
 	traits = {
 		aggressive_assaulter	
 	}

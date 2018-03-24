@@ -113,11 +113,12 @@ create_corps_commander = {
     defense_skill = 2
     planning_skill = 1
     logistics_skill = 1
+	female = yes
 }
 
 create_corps_commander = {
 	name = "Elric Rochette"
-	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_13.dds"
+	picture = "Whitegrif.tga"
 	traits = { bearer_of_artillery }
 	skill = 2
 	attack_skill = 2
@@ -128,7 +129,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Johann Price II"
-	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_1.dds"
+	picture = "Gabriel20.tga"
 	traits = { commando }
 	skill = 3
 	attack_skill = 3
@@ -139,7 +140,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Geoffroy Agnelli"
-	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_7.dds"
+	picture = "August.tga"
 	traits = { 
 		#inspirational_leader_corps 
 	}
@@ -152,7 +153,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Ethel Citroen"
-	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_9.dds"
+	picture = "LittleBusta.tga"
 	traits = { panzer_leader }
 	skill = 2
 	attack_skill = 2
@@ -164,7 +165,7 @@ create_corps_commander = {
 
 create_navy_leader = {
 	name = "Horst Whitefeather"
-	picture = "Governor.tga"
+	picture = "August.tga"
 	traits = { air_controller }
 	skill = 2
 	attack_skill = 1
@@ -174,7 +175,7 @@ create_navy_leader = {
 }
 create_navy_leader = {
 	name = "Silvain Giraud"
-	picture = "Governor.tga"
+	picture = "August.tga"
 	traits = { ironside }
 	skill = 2
 	attack_skill = 2

@@ -5,8 +5,8 @@ ideas = {
 		princess_cadence = {
 
 			allowed = {
-is_original_EQS = yes
-}
+				original_tag = EQS
+			}
 			available = {
 				NOT = { has_government = communism }
 				has_country_flag = royal_family_returned
@@ -25,14 +25,14 @@ is_original_EQS = yes
 		twilight_sparkle = {
 
 			allowed = {
-is_original_EQS = yes
-}
+				original_tag = EQS
+			}
 			available = {
 				NOT = { has_government = communism }
 				if = {
-					limit = { event_target:solar_empire = { exists = yes } }
+					limit = { SOL = { exists = yes } }
 					NOT = {
-						event_target:solar_empire = {
+						SOL = {
 							has_country_flag = SOL_has_twilight
 						}
 					}
@@ -54,17 +54,20 @@ is_original_EQS = yes
 		cocopommel = {
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
-					tag = event_target:equestria
+					original_tag = EQS
 					AND = {
-						tag = event_target:solar_empire
-						NOT = { country_exists = event_target:equestria }
+						original_tag = SOL
+						NOT = { country_exists = EQS }
 					}
 				}
 			}
@@ -75,17 +78,20 @@ is_original_EQS = yes
 		flim = {
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
-					tag = event_target:solar_empire
+					original_tag = SOL
 					AND = {
-						tag = event_target:equestria
-						NOT = { country_exists = event_target:solar_empire }
+						original_tag = EQS
+						NOT = { country_exists = SOL }
 					}
 				}
 			}
@@ -96,27 +102,30 @@ is_original_EQS = yes
 		raven = {
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
-					tag = event_target:solar_empire
+					original_tag = SOL
 					AND = {
-						tag = event_target:equestria
-						NOT = { country_exists = event_target:solar_empire }
+						original_tag = EQS
+						NOT = { country_exists = SOL }
 					}
 				}
 			}
 			OR = {
 				if = {
-					limit = { tag = event_target:solar_empire }
+					limit = { original_tag = SOL }
 					has_country_leader = { ruling_only = yes name = "Daybreaker" }
 				}
 				if = {
-					limit = { tag = event_target:equestria }
+					limit = { original_tag = EQS }
 					has_country_leader = { ruling_only = yes name = "Princess Celestia" }
 				}
 			}
@@ -127,25 +136,28 @@ is_original_EQS = yes
 		blueblood = {
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			NOT = { has_government = communism }
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
-					tag = event_target:solar_empire
+					original_tag = SOL
 					AND = {
-						tag = event_target:equestria
-						NOT = { country_exists = event_target:solar_empire }
+						original_tag = EQS
+						NOT = { country_exists = SOL }
 					}
 				}
 			}
 			OR = {
-				hidden_trigger = { tag = event_target:solar_empire }
+				hidden_trigger = { original_tag = SOL }
 				if = {
-					limit = { tag = event_target:equestria }
+					limit = { original_tag = EQS }
 					has_country_flag = EQS_blueblood_allowed
 				}
 			}
@@ -156,24 +168,27 @@ is_original_EQS = yes
 		fancy_pants = {
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			NOT = { has_government = communism }
 			NOT = { has_country_leader = { ruling_only = yes name = "Fancy Pants"} }
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
 					AND = {
-						tag = event_target:solar_empire
-						NOT = { country_exists = event_target:equestria }
+						original_tag = SOL
+						NOT = { country_exists = EQS }
 						NOT = {
 							has_country_flag = SOL_harmonic_commanders_leave
 							has_country_flag = SOL_purge_finished
 						}
 					}
-					tag = event_target:equestria
+					original_tag = EQS
 				}
 			}
 		}
@@ -183,8 +198,8 @@ is_original_EQS = yes
 		filthy_rich = {
 
 		allowed = {
-is_original_EQS = yes
-}
+			original_tag = EQS
+		}
 
 		available = {
 			NOT = { has_government = communism }
@@ -196,8 +211,8 @@ is_original_EQS = yes
 		florina = {
 
 			allowed = {
-is_original_EQS = yes
-}
+				original_tag = EQS
+			}
 			traits = { communist_revolutionary }
 
 		}
@@ -205,22 +220,22 @@ is_original_EQS = yes
 #
 #
 #			allowed = {
-#				tag = event_target:equestria
+#				original_tag = EQS
 #			}
 #
 #			traits = { fascist_demagogue }
 #			on_add = {
-#				#country_event = political.7
+#				country_event = political.7
 #			}
 #		}
 #		ku = {
 
 #			allowed = {
-#				tag = event_target:equestria }
+#				original_tag = EQS }
 #			traits = { democratic_reformer }
 
 #			on_add = {
-#				##country_event = political.13
+#				country_event = political.13
 #			}
 #		}
 }
@@ -231,30 +246,33 @@ is_original_EQS = yes
 		nimbusdash = {
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			if = {
-				limit = { tag = event_target:equestria }
+				limit = { original_tag = EQS }
 				has_completed_focus = Advisors
 			}
 			if = {
-				limit = { tag = event_target:solar_empire }
+				limit = { original_tag = SOL }
 				OR = {
-					event_target:equestria = { has_completed_focus = Advisors }
+					EQS = { has_completed_focus = Advisors }
 					has_completed_focus = SOL_new_officers
 				}
 			}
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
 					AND = {
-						tag = event_target:solar_empire
-						NOT = { country_exists = event_target:equestria }
+						original_tag = SOL
+						NOT = { country_exists = EQS }
 						NOT = { has_country_flag = SOL_purge_finished }
 					}
-					tag = event_target:equestria
+					original_tag = EQS
 				}
 			}
 		}
@@ -269,28 +287,31 @@ is_original_EQS = yes
 		grimhoof = {
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			if = {
-				limit = { tag = event_target:equestria }
+				limit = { original_tag = EQS }
 				has_completed_focus = Advisors
 			}
 			if = {
-				limit = { tag = event_target:solar_empire }
+				limit = { original_tag = SOL }
 				OR = {
-					event_target:equestria = { has_completed_focus = Advisors }
+					EQS = { has_completed_focus = Advisors }
 					has_completed_focus = SOL_new_officers
 				}
 			}
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
-					tag = event_target:solar_empire
+					original_tag = SOL
 					AND = {
-						tag = event_target:equestria
-						NOT = { country_exists = event_target:solar_empire }
+						original_tag = EQS
+						NOT = { country_exists = SOL }
 					}
 				}
 			}
@@ -306,30 +327,33 @@ is_original_EQS = yes
 		coppertop = {
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			if = {
-				limit = { tag = event_target:equestria }
+				limit = { original_tag = EQS }
 				has_completed_focus = Advisors
 			}
 			if = {
-				limit = { tag = event_target:solar_empire }
-				event_target:equestria = { has_completed_focus = Advisors }
+				limit = { original_tag = SOL }
+				EQS = { has_completed_focus = Advisors }
 			}
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
 					AND = {
-						tag = event_target:solar_empire
-						NOT = { country_exists = event_target:equestria }
+						original_tag = SOL
+						NOT = { country_exists = EQS }
 						NOT = {
 							has_country_flag = SOL_harmonic_commanders_leave
 							has_country_flag = SOL_purge_finished
 						}
 					}
-					tag = event_target:equestria
+					original_tag = EQS
 				}
 			}
 		}
@@ -345,17 +369,20 @@ is_original_EQS = yes
 		maudpie = {
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			if = {
-				limit = { tag = event_target:equestria }
+				limit = { original_tag = EQS }
 				has_completed_focus = Advisors
 			}
 			if = {
-				limit = { tag = event_target:solar_empire }
-				event_target:equestria = { has_completed_focus = Advisors }
+				limit = { original_tag = SOL }
+				EQS = { has_completed_focus = Advisors }
 			}
 			NOT = { country_exists = ROC }
 			if = {
@@ -363,17 +390,17 @@ is_original_EQS = yes
 				SCS = { NOT = { has_government = communism } }
 			}
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
 					AND = {
-						tag = event_target:solar_empire
-						NOT = { country_exists = event_target:equestria }
+						original_tag = SOL
+						NOT = { country_exists = EQS }
 						NOT = {
 							has_country_flag = SOL_harmonic_commanders_leave
 							has_country_flag = SOL_purge_finished
 						}
 					}
-					tag = event_target:equestria
+					original_tag = EQS
 				}
 			}
 		}
@@ -391,30 +418,33 @@ is_original_EQS = yes
 		rainbowdash = {
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			if = {
-				limit = { tag = event_target:equestria }
+				limit = { original_tag = EQS }
 				has_completed_focus = Advisors
 			}
 			if = {
-				limit = { tag = event_target:solar_empire }
-				event_target:equestria = { has_completed_focus = Advisors }
+				limit = { original_tag = SOL }
+				EQS = { has_completed_focus = Advisors }
 			}
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
 					AND = {
-						tag = event_target:solar_empire
-						NOT = { country_exists = event_target:equestria }
+						original_tag = SOL
+						NOT = { country_exists = EQS }
 						NOT = {
 							has_country_flag = SOL_harmonic_commanders_leave
 							has_country_flag = SOL_purge_finished
 						}
 					}
-					tag = event_target:equestria
+					original_tag = EQS
 				}
 			}
 		}
@@ -429,29 +459,32 @@ is_original_EQS = yes
 		kittyhawk = {
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			if = {
-				limit = { tag = event_target:equestria }
+				limit = { original_tag = EQS }
 				has_completed_focus = Advisors
 			}
 			if = {
-				limit = { tag = event_target:solar_empire }
+				limit = { original_tag = SOL }
 				OR = {
-					event_target:equestria = { has_completed_focus = Advisors }
+					EQS = { has_completed_focus = Advisors }
 					has_completed_focus = SOL_new_officers
 				}
 			}
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
 					AND = {
-						tag = event_target:solar_empire
-						NOT = { country_exists = event_target:equestria }
+						original_tag = SOL
+						NOT = { country_exists = EQS }
 					}
-					tag = event_target:equestria
+					original_tag = EQS
 				}
 			}
 		}
@@ -470,26 +503,29 @@ is_original_EQS = yes
 		eqs5 = {
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			if = {
-				limit = { tag = event_target:equestria }
+				limit = { original_tag = EQS }
 				has_completed_focus = Advisors
 			}
 			if = {
-				limit = { tag = event_target:solar_empire }
-				event_target:equestria = { has_completed_focus = Advisors }
+				limit = { original_tag = SOL }
+				EQS = { has_completed_focus = Advisors }
 			}
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
 					AND = {
-						tag = event_target:solar_empire
-						NOT = { country_exists = event_target:equestria }
+						original_tag = SOL
+						NOT = { country_exists = EQS }
 					}
-					tag = event_target:equestria
+					original_tag = EQS
 				}
 			}
 		}
@@ -504,26 +540,29 @@ is_original_EQS = yes
 		eqs6 = {
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			if = {
-				limit = { tag = event_target:equestria }
+				limit = { original_tag = EQS }
 				has_completed_focus = Advisors
 			}
 			if = {
-				limit = { tag = event_target:solar_empire }
-				event_target:equestria = { has_completed_focus = Advisors }
+				limit = { original_tag = SOL }
+				EQS = { has_completed_focus = Advisors }
 			}
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
 					AND = {
-						tag = event_target:solar_empire
-						NOT = { country_exists = event_target:equestria }
+						original_tag = SOL
+						NOT = { country_exists = EQS }
 					}
-					tag = event_target:equestria
+					original_tag = EQS
 				}
 			}
 		}
@@ -540,33 +579,36 @@ is_original_EQS = yes
 		limestone = {
 
 			allowed = {
-				original_tag = EQS
+				OR = {
+					original_tag = EQS
+					original_tag = SOL
+				}
 			}
 
 			available = {
 				if = {
-					limit = { tag = event_target:equestria }
+					limit = { original_tag = EQS }
 					has_completed_focus = Advisors
 				}
 				if = {
-					limit = { tag = event_target:solar_empire }
+					limit = { original_tag = SOL }
 					OR = {
-						event_target:equestria = { has_completed_focus = Advisors }
+						EQS = { has_completed_focus = Advisors }
 						has_completed_focus = SOL_new_officers
 					}
 				}
 				if = {
-					limit = { event_target:solar_empire = { exists = yes } }
+					limit = { SOL = { exists = yes } }
 					OR = {
 						AND = {
-							tag = event_target:solar_empire
-							NOT = { country_exists = event_target:equestria }
+							original_tag = SOL
+							NOT = { country_exists = EQS }
 							NOT = {
 								has_country_flag = SOL_harmonic_commanders_leave
 								has_country_flag = SOL_purge_finished
 							}
 						}
-						tag = event_target:equestria
+						original_tag = EQS
 					}
 				}
 			}
@@ -581,30 +623,33 @@ is_original_EQS = yes
 
 
 			allowed = {
-				original_tag = EQS
+				OR = {
+					original_tag = EQS
+					original_tag = SOL
+				}
 			}
 
 			available = {
 				if = {
-					limit = { tag = event_target:equestria }
+					limit = { original_tag = EQS }
 					has_completed_focus = Advisors
 				}
 				if = {
-					limit = { tag = event_target:solar_empire }
-					event_target:equestria = { has_completed_focus = Advisors }
+					limit = { original_tag = SOL }
+					EQS = { has_completed_focus = Advisors }
 				}
 				if = {
-					limit = { event_target:solar_empire = { exists = yes } }
+					limit = { SOL = { exists = yes } }
 					OR = {
 						AND = {
-							tag = event_target:solar_empire
-							NOT = { country_exists = event_target:equestria }
+							original_tag = SOL
+							NOT = { country_exists = EQS }
 							NOT = {
 								has_country_flag = SOL_harmonic_commanders_leave
 								has_country_flag = SOL_purge_finished
 							}
 						}
-						tag = event_target:equestria
+						original_tag = EQS
 					}
 				}
 			}
@@ -619,22 +664,25 @@ is_original_EQS = yes
 
 
 			allowed = {
-				original_tag = EQS
+				OR = {
+					original_tag = EQS
+					original_tag = SOL
+				}
 			}
 
 			available = {
 				if = {
-					limit = { event_target:solar_empire = { exists = yes } }
+					limit = { SOL = { exists = yes } }
 					OR = {
 						AND = {
-							tag = event_target:solar_empire
-							NOT = { country_exists = event_target:equestria }
+							original_tag = SOL
+							NOT = { country_exists = EQS }
 							NOT = {
 								has_country_flag = SOL_harmonic_commanders_leave
 								has_country_flag = SOL_purge_finished
 							}
 						}
-						tag = event_target:equestria
+						original_tag = EQS
 					}
 				}
 			}
@@ -649,29 +697,32 @@ is_original_EQS = yes
 
 
 			allowed = {
-				original_tag = EQS
+				OR = {
+					original_tag = EQS
+					original_tag = SOL
+				}
 			}
 
 			available = {
 				if = {
-					limit = { tag = event_target:equestria }
+					limit = { original_tag = EQS }
 					has_completed_focus = Advisors
 				}
 				if = {
-					limit = { tag = event_target:solar_empire }
+					limit = { original_tag = SOL }
 					OR = {
-						event_target:equestria = { has_completed_focus = Advisors }
+						EQS = { has_completed_focus = Advisors }
 						has_completed_focus = SOL_air_force
 					}
 				}
 				if = {
-					limit = { event_target:solar_empire = { exists = yes } }
+					limit = { SOL = { exists = yes } }
 					OR = {
 						AND = {
-							tag = event_target:solar_empire
-							NOT = { country_exists = event_target:equestria }
+							original_tag = SOL
+							NOT = { country_exists = EQS }
 						}
-						tag = event_target:equestria
+						original_tag = EQS
 					}
 				}
 			}
@@ -688,30 +739,33 @@ is_original_EQS = yes
 
 
 			allowed = {
-				original_tag = EQS
+				OR = {
+					original_tag = EQS
+					original_tag = SOL
+				}
 			}
 
 			available = {
 				if = {
-					limit = { tag = event_target:equestria }
+					limit = { original_tag = EQS }
 					has_completed_focus = Extreme_war_comittee
 				}
 				if = {
-					limit = { tag = event_target:solar_empire }
-					event_target:equestria = { has_completed_focus = Extreme_war_comittee }
+					limit = { original_tag = SOL }
+					EQS = { has_completed_focus = Extreme_war_comittee }
 				}
 				if = {
-					limit = { event_target:solar_empire = { exists = yes } }
+					limit = { SOL = { exists = yes } }
 					OR = {
 						AND = {
-							tag = event_target:solar_empire
-							NOT = { country_exists = event_target:equestria }
+							original_tag = SOL
+							NOT = { country_exists = EQS }
 							NOT = {
 								has_country_flag = SOL_harmonic_commanders_leave
 								has_country_flag = SOL_purge_finished
 							}
 						}
-						tag = event_target:equestria
+						original_tag = EQS
 					}
 				}
 			}
@@ -726,30 +780,33 @@ is_original_EQS = yes
 
 
 			allowed = {
-				original_tag = EQS
+				OR = {
+					original_tag = EQS
+					original_tag = SOL
+				}
 			}
 
 			available = {
 				if = {
-					limit = { tag = event_target:equestria }
+					limit = { original_tag = EQS }
 					has_completed_focus = Extreme_war_comittee
 				}
 				if = {
-					limit = { tag = event_target:solar_empire }
-					event_target:equestria = { has_completed_focus = Extreme_war_comittee }
+					limit = { original_tag = SOL }
+					EQS = { has_completed_focus = Extreme_war_comittee }
 				}
 				if = {
-					limit = { event_target:solar_empire = { exists = yes } }
+					limit = { SOL = { exists = yes } }
 					OR = {
 						AND = {
-							tag = event_target:solar_empire
-							NOT = { country_exists = event_target:equestria }
+							original_tag = SOL
+							NOT = { country_exists = EQS }
 							NOT = {
 								has_country_flag = SOL_harmonic_commanders_leave
 								has_country_flag = SOL_purge_finished
 							}
 						}
-						tag = event_target:equestria
+						original_tag = EQS
 					}
 				}
 			}
@@ -763,30 +820,33 @@ is_original_EQS = yes
 
 
 			allowed = {
-				original_tag = EQS
+				OR = {
+					original_tag = EQS
+					original_tag = SOL
+				}
 			}
 
 			available = {
 				if = {
-					limit = { tag = event_target:equestria }
+					limit = { original_tag = EQS }
 					has_completed_focus = EQS_WMD
 				}
 				if = {
-					limit = { tag = event_target:solar_empire }
-					event_target:equestria = { has_completed_focus = EQS_WMD }
+					limit = { original_tag = SOL }
+					EQS = { has_completed_focus = EQS_WMD }
 				}
 				if = {
-					limit = { event_target:solar_empire = { exists = yes } }
+					limit = { SOL = { exists = yes } }
 					OR = {
 						AND = {
-							tag = event_target:solar_empire
-							NOT = { country_exists = event_target:equestria }
+							original_tag = SOL
+							NOT = { country_exists = EQS }
 							NOT = {
 								has_country_flag = SOL_harmonic_commanders_leave
 								has_country_flag = SOL_purge_finished
 							}
 						}
-						tag = event_target:equestria
+						original_tag = EQS
 					}
 				}
 			}
@@ -802,29 +862,32 @@ is_original_EQS = yes
 
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			if = {
-				limit = { tag = event_target:equestria }
+				limit = { original_tag = EQS }
 				has_completed_focus = EQS_WMD
 			}
 			if = {
-				limit = { tag = event_target:solar_empire }
+				limit = { original_tag = SOL }
 				OR = {
-					event_target:equestria = { has_completed_focus = EQS_WMD }
+					EQS = { has_completed_focus = EQS_WMD }
 					has_completed_focus = SOL_WMD
 				}
 			}
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
 					AND = {
-						tag = event_target:equestria
-						NOT = { country_exists = event_target:solar_empire }
+						original_tag = EQS
+						NOT = { country_exists = SOL }
 					}
-					tag = event_target:solar_empire
+					original_tag = SOL
 				}
 			}
 		}
@@ -849,20 +912,23 @@ is_original_EQS = yes
 
 
 			allowed = {
-				original_tag = EQS
+				OR = {
+					original_tag = EQS
+					original_tag = SOL
+				}
 			}
 
 			available = {
 				if = {
-					limit = { event_target:solar_empire = { exists = yes } }
+					limit = { SOL = { exists = yes } }
 					OR = {
 						AND = {
-							tag = event_target:equestria
-							NOT = { event_target:solar_empire = { has_idea = mustang } }
+							original_tag = EQS
+							NOT = { SOL = { has_idea = mustang } }
 						}
 						AND = {
-							tag = event_target:solar_empire
-							NOT = { event_target:equestria = { has_idea = mustang } }
+							original_tag = SOL
+							NOT = { EQS = { has_idea = mustang } }
 						}
 					}
 				}
@@ -878,20 +944,23 @@ is_original_EQS = yes
 
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
 					AND = {
-						tag = event_target:equestria
-						NOT = { event_target:solar_empire = { has_idea = shoof } }
+						original_tag = EQS
+						NOT = { SOL = { has_idea = shoof } }
 					}
 					AND = {
-						tag = event_target:solar_empire
-						NOT = { event_target:equestria = { has_idea = shoof } }
+						original_tag = SOL
+						NOT = { EQS = { has_idea = shoof } }
 					}
 				}
 			}
@@ -912,20 +981,23 @@ is_original_EQS = yes
 
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
 					AND = {
-						tag = event_target:equestria
-						NOT = { event_target:solar_empire = { has_idea = sirius } }
+						original_tag = EQS
+						NOT = { SOL = { has_idea = sirius } }
 					}
 					AND = {
-						tag = event_target:solar_empire
-						NOT = { event_target:equestria = { has_idea = sirius } }
+						original_tag = SOL
+						NOT = { EQS = { has_idea = sirius } }
 					}
 				}
 			}
@@ -953,20 +1025,23 @@ is_original_EQS = yes
 
 
 			allowed = {
-				original_tag = EQS
+				OR = {
+					original_tag = EQS
+					original_tag = SOL
+				}
 			}
 
 			available = {
 				if = {
-					limit = { event_target:solar_empire = { exists = yes } }
+					limit = { SOL = { exists = yes } }
 					OR = {
 						AND = {
-							tag = event_target:equestria
-							NOT = { event_target:solar_empire = { has_idea = star_energy } }
+							original_tag = EQS
+							NOT = { SOL = { has_idea = star_energy } }
 						}
 						AND = {
-							tag = event_target:solar_empire
-							NOT = { event_target:equestria = { has_idea = star_energy } }
+							original_tag = SOL
+							NOT = { EQS = { has_idea = star_energy } }
 						}
 					}
 				}
@@ -986,20 +1061,23 @@ is_original_EQS = yes
 
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
 					AND = {
-						tag = event_target:equestria
-						NOT = { event_target:solar_empire = { has_idea = macintosh } }
+						original_tag = EQS
+						NOT = { SOL = { has_idea = macintosh } }
 					}
 					AND = {
-						tag = event_target:solar_empire
-						NOT = { event_target:equestria = { has_idea = macintosh } }
+						original_tag = SOL
+						NOT = { EQS = { has_idea = macintosh } }
 					}
 				}
 			}
@@ -1020,20 +1098,23 @@ is_original_EQS = yes
 
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
 					AND = {
-						tag = event_target:equestria
-						NOT = { event_target:solar_empire = { has_idea = fillydelphia_arms } }
+						original_tag = EQS
+						NOT = { SOL = { has_idea = fillydelphia_arms } }
 					}
 					AND = {
-						tag = event_target:solar_empire
-						NOT = { event_target:equestria = { has_idea = fillydelphia_arms } }
+						original_tag = SOL
+						NOT = { EQS = { has_idea = fillydelphia_arms } }
 					}
 				}
 			}
@@ -1058,20 +1139,23 @@ is_original_EQS = yes
 
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
 					AND = {
-						tag = event_target:equestria
-						NOT = { event_target:solar_empire = { has_idea = rainbow_factory } }
+						original_tag = EQS
+						NOT = { SOL = { has_idea = rainbow_factory } }
 					}
 					AND = {
-						tag = event_target:solar_empire
-						NOT = { event_target:equestria = { has_idea = rainbow_factory } }
+						original_tag = SOL
+						NOT = { EQS = { has_idea = rainbow_factory } }
 					}
 				}
 			}
@@ -1093,20 +1177,23 @@ is_original_EQS = yes
 
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
 					AND = {
-						tag = event_target:equestria
-						NOT = { event_target:solar_empire = { has_idea = manehattan } }
+						original_tag = EQS
+						NOT = { SOL = { has_idea = manehattan } }
 					}
 					AND = {
-						tag = event_target:solar_empire
-						NOT = { event_target:equestria = { has_idea = manehattan } }
+						original_tag = SOL
+						NOT = { EQS = { has_idea = manehattan } }
 					}
 				}
 			}
@@ -1129,20 +1216,23 @@ is_original_EQS = yes
 		northern = {
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
 					AND = {
-						tag = event_target:equestria
-						NOT = { event_target:solar_empire = { has_idea = northern } }
+						original_tag = EQS
+						NOT = { SOL = { has_idea = northern } }
 					}
 					AND = {
-						tag = event_target:solar_empire
-						NOT = { event_target:equestria = { has_idea = northern } }
+						original_tag = SOL
+						NOT = { EQS = { has_idea = northern } }
 					}
 				}
 			}
@@ -1160,20 +1250,23 @@ is_original_EQS = yes
 		cloudsdale_research = {
 
 		allowed = {
-			original_tag = EQS
+			OR = {
+				original_tag = EQS
+				original_tag = SOL
+			}
 		}
 
 		available = {
 			if = {
-				limit = { event_target:solar_empire = { exists = yes } }
+				limit = { SOL = { exists = yes } }
 				OR = {
 					AND = {
-						tag = event_target:equestria
-						NOT = { event_target:solar_empire = { has_idea = cloudsdale_research } }
+						original_tag = EQS
+						NOT = { SOL = { has_idea = cloudsdale_research } }
 					}
 					AND = {
-						tag = event_target:solar_empire
-						NOT = { event_target:equestria = { has_idea = cloudsdale_research } }
+						original_tag = SOL
+						NOT = { EQS = { has_idea = cloudsdale_research } }
 					}
 				}
 			}
@@ -1199,6 +1292,7 @@ is_original_EQS = yes
 		allowed = {
 			OR = {
 				original_tag = EQS
+				original_tag = SOL
 				original_tag = BAL
 				original_tag = CES
 				original_tag = NMS
@@ -1217,6 +1311,7 @@ is_original_EQS = yes
 						owns_state = 13
 						OR = {
 							original_tag = EQS
+							original_tag = SOL
 							original_tag = BAL
 							original_tag = CES
 							original_tag = NMS
@@ -1245,6 +1340,7 @@ is_original_EQS = yes
 		allowed = {
 			OR = {
 				original_tag = EQS
+				original_tag = SOL
 				original_tag = CRY
 			}
 		}
@@ -1258,6 +1354,7 @@ is_original_EQS = yes
 						owns_state = 14
 						OR = {
 							original_tag = EQS
+							original_tag = SOL
 							original_tag = BAL
 							original_tag = CES
 							original_tag = NMS
@@ -1383,7 +1480,7 @@ country = {
 				is_subject = no
 			}
 			allowed_civil_war = {
-				has_government = democratic
+				always = yes
 			}
 			removal_cost = -1
 
@@ -1492,7 +1589,8 @@ country = {
 				available = {
 					OR = {
 						has_government = democratic
-						has_government = fascism
+						has_government = fascist
+						tag = SOL
 					}
 					is_subject = no
 				}
@@ -1716,6 +1814,7 @@ country = {
 				OR = {
 					original_tag = NLR
 					original_tag = EQS
+					original_tag = SOL
 					AND = {
 						eqs_has_civil_war = yes
 						any_enemy_country = {
@@ -1731,6 +1830,7 @@ country = {
 			modifier = {
 				training_time_army_factor = 0.1
 				army_morale_factor = -0.1
+				stability_factor = -0.25
 				industrial_capacity_factory = -0.25
 				production_factory_max_efficiency_factor = -0.10
 				production_speed_buildings_factor = -0.3
@@ -1766,6 +1866,7 @@ country = {
 				OR = {
 					original_tag = NLR
 					original_tag = EQS
+					original_tag = SOL
 					AND = {
 						eqs_has_civil_war = yes
 						any_enemy_country = {
@@ -1781,6 +1882,7 @@ country = {
 			modifier = {
 				training_time_army_factor = 0.1
 				army_morale_factor = -0.1
+				stability_factor = -0.10
 				industrial_capacity_factory = -0.25
 				production_factory_max_efficiency_factor = -0.10
 				production_speed_buildings_factor = -0.3
@@ -1965,7 +2067,7 @@ country = {
 				removal_cost = -1
 
 				modifier = {
-					war_support_factor = -0.1
+					stability_factor = -0.1
 					political_power_cost = 0.1
 				}
 			}
@@ -1989,7 +2091,7 @@ country = {
 
 				modifier = {
 					fascism_drift = 0.03
-					war_support_factor = 0.07
+					stability_factor = 0.07
 					drift_defence_factor = 0.1
 					foreign_subversive_activites = -0.1
 				}
@@ -2036,7 +2138,6 @@ country = {
 
 					modifier = {
 						stability_factor = -0.05
-						war_support_factor = 0.1
 						fascism_drift = 0.01
 						enemy_partisan_effect = -0.2
 						political_power_factor = 0.1
@@ -2271,8 +2372,8 @@ country = {
 country = {
     EQS_cel_executive = {
       allowed = {
-is_original_EQS = yes
-}
+        original_tag = EQS
+      }
       allowed_civil_war = {
           has_government = democratic
         }
@@ -2289,8 +2390,8 @@ is_original_EQS = yes
 country = {
     EQS_cel_figurehead = {
       allowed = {
-is_original_EQS = yes
-}
+        original_tag = EQS
+      }
       allowed_civil_war = {
           has_government = democratic
         }

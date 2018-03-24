@@ -54,7 +54,6 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = despotism
 	traits = {
-	deranged
 	}
 }
 
@@ -65,7 +64,7 @@ create_country_leader = {
 	expire = "1965.1.1"
  ideology = nazism
 	traits = {
-    deranged
+
 	}
 }
 
@@ -76,7 +75,7 @@ create_country_leader = {
 	expire = "1965.1.1"
  ideology = conservatism
  traits = {
- deranged
+
 	}
 }
 

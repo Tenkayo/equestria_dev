@@ -725,7 +725,7 @@ technologies = {
 				OR = {
 					tag = NLR
 					tag = OLE
-					tag = event_target:solar_empire
+					tag = SOL
 					tag = TRD
 				}
 			}

@@ -483,8 +483,8 @@ focus = {
                      }
 		         }
 	    if = {
-        limit = { event_target:solar_empire = { exists = yes } }		
-		event_target:solar_empire = {
+        limit = { SOL = { exists = yes } }		
+		SOL = {
                OR = {
                    exists = no
                    is_subject_of = ROOT

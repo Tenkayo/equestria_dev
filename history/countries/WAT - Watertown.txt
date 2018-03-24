@@ -41,8 +41,6 @@ lack_of_scientists }
 
 set_stability = 0.50
 
-set_war_support = 0.05
-
 create_country_leader = {
 	name = "Herman Goering"
 	desc = ""

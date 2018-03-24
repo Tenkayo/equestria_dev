@@ -4,11 +4,8 @@ state={
 	name="STATE_563"
 
 	history={
-		owner = NTR
-		add_core_of = NTR
-		victory_points = {
-			497 10
-		}
+		owner = SRS
+		add_core_of = SRS
         buildings = {
 	            infrastructure = 2
 	            industrial_complex = 1

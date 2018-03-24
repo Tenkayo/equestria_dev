@@ -63,10 +63,16 @@ conquer_BOI = {
 ignore_salt_markt = {
 	enable = {
 		original_tag = GRW
-		has_war = yes
+		OR = {
+			has_war_with = BAN
+			has_war_with = BRF
+		}
 	}
 	abort = {
-		has_war = no
+		NOT = {
+			has_war_with = BAN
+			has_war_with = BRF
+		}
 	}
 
 	ai_strategy = {
@@ -78,51 +84,5 @@ ignore_salt_markt = {
 		type = ignore
 		id = "SIC"
 		value = 200
-	}
-}
-finish_the_goddamn_war = {
-	enable = {
-		original_tag = GRW
-		has_war_with = BRF
-	}
-	abort = {
-		has_completed_focus = GRW_civillian_needs
-		has_completed_focus = GRW_political_line
-	}
-
-	ai_strategy = {
-		type = ignore
-		id = "GRY"
-		value = 500
-	}
-	ai_strategy = {
-		type = ignore
-		id = "LUS"
-		value = 500
-	}
-	ai_strategy = {
-		type = ignore
-		id = "GRU"
-		value = 500
-	}
-	ai_strategy = {
-		type = conquer
-		id = "GRY"
-		value = -500
-	}
-	ai_strategy = {
-		type = conquer
-		id = "LUS"
-		value = -500
-	}
-	ai_strategy = {
-		type = conquer
-		id = "GRU"
-		value = -500
-	}
-	ai_strategy = {
-		type = conquer
-		id = "CYA"
-		value = -500
 	}
 }

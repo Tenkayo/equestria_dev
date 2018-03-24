@@ -316,6 +316,7 @@ technologies = {
 						OR = {
 							original_tag = EQS
 							original_tag = EQC
+							original_tag = SOL
 							original_tag = NLR
 							original_tag = CRY
 							original_tag = SCS

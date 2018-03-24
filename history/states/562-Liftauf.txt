@@ -7,13 +7,14 @@ state={
 	state_category = city
 	manpower=1260300
 	history = {
-		owner = NTR
-		add_core_of = NTR
+		owner = SRS
+		add_core_of = SRS
 		victory_points = { 1307 25 }
 	        buildings = {
-	            infrastructure = 2
-	            industrial_complex = 1
-				arms_factory = 1
+	            infrastructure = 4
+	            industrial_complex = 2
+				arms_factory = 2
+				air_base = 1
 				dockyard = 1
 				1307 = { naval_base = 1 }
 	    }

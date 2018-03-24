@@ -900,7 +900,10 @@ technologies = {
 
 			modifier = {
 				factor = 2
-				tag = EQS
+				OR = {
+					tag = SOL
+					tag = EQS
+				}
 			}
 		}
 

@@ -178,7 +178,7 @@ news_event = {
 	id = news.5
 	title = news.5.t
 	desc = news.5.d
-	picture = GFX_news_eaw_soldier_logo
+	picture = GFX_news_technical_difficulties
 
 	major = yes
 
@@ -569,6 +569,7 @@ country_event = {
 			NOT = { country_exists = CHN }
 			CHN = {
 				is_subject_of = EQS
+				is_subject_of = SOL
 			}
 		}
 		has_global_flag = the_war
@@ -1040,8 +1041,8 @@ country_event = {
 	hidden = yes
 	trigger = {
 		OR = {
-			EQS = { has_wargoal_against = CRY }
-			CRY = { has_wargoal_against = EQS }
+			EQS = { has_completed_focus = EQS_sombra_return_war }
+			CRY = { has_completed_focus = CRY_conquest }
 		}
 	}
 	mean_time_to_happen = { days = 3 }
@@ -1104,6 +1105,7 @@ country_event = {
 			OR = {
 				exists = no
 				is_subject_of = EQS
+				is_subject_of = SOL
 			}
 		}
 		has_global_flag = the_crystal_war
@@ -1132,6 +1134,12 @@ country_event = {
 	trigger = {
 		CRY = { has_government = fascism }
 		EQS = {
+			OR = {
+				exists = no
+				is_subject_of = CRY
+			}
+		}
+		SOL = {
 			OR = {
 				exists = no
 				is_subject_of = CRY
@@ -1372,21 +1380,22 @@ news_event = { #NUKE DROPPED ON HIVE
 	option = {
 		name = news.50.b
 		trigger = {
-			tag = event_target:solar_empire
+			tag = SOL
 		}
 	}
 	option = {
 		name = news.50.e
 		trigger = {
-			tag = event_target:equestria
+			tag = EQS
 		}
 	}
 	option = {
 		name = news.50.c
 		trigger = {
-			event_target:solar_empire = { exists = yes }
+			SOL = { exists = yes }
 			NOT = {
-				tag = event_target:equestria
+				tag = SOL
+				tag = EQS
 				tag = CHN
 			}
 		}
@@ -1394,9 +1403,10 @@ news_event = { #NUKE DROPPED ON HIVE
 	option = {
 		name = news.50.f
 		trigger = {
-			event_target:equestria = { exists = yes }
+			EQS = { exists = yes }
 			NOT = {
-				tag = event_target:equestria
+				tag = SOL
+				tag = EQS
 				tag = CHN
 			}
 		}
@@ -1531,15 +1541,15 @@ news_event = { ## IF EQS WINS
 	option = {
 		name = news.203.a
 		trigger = {
-			OR = { tag = event_target:equestria tag = event_target:solar_empire }
+			OR = { tag = EQS tag = SOL }
 		}
 	}
 	option = {
 		name = news.203.b
 		trigger = {
 			NOT = {
-				tag = event_target:equestria
-				tag = event_target:equestria
+				tag = EQS
+				tag = SOL
 			}
 		}
 	}
@@ -1553,6 +1563,13 @@ country_event = {
 		OR = {
 			NOT = { country_exists = EQS }
 			EQS = {
+				is_subject = yes
+				has_capitulated = yes
+			}
+		}
+		OR = {
+			NOT = { country_exists = SOL }
+			SOL = {
 				is_subject = yes
 				has_capitulated = yes
 			}
@@ -1624,7 +1641,10 @@ news_event = { ## IF EQS WINS
 	option = {
 		name = news.206.a
 		trigger = {
-			tag = EQS
+			OR = {
+				tag = EQS
+				tag = SOL
+			}
 		}
 	}
 	option = {
@@ -1632,6 +1652,7 @@ news_event = { ## IF EQS WINS
 		trigger = {
 			NOT = {
 				tag = EQS
+				tag = SOL
 			}
 		}
 	}
@@ -1711,6 +1732,7 @@ news_event = {
 			NOT = {
 				TAG = CHN
 				TAG = EQS
+				tag = SOL
 				TAG = CRY
 			}
 		}
@@ -1720,6 +1742,7 @@ news_event = {
 		trigger = {
 			OR = {
 				tag = EQS
+				tag = SOL
 				tag = CRY
 			}
 		}
@@ -1739,8 +1762,14 @@ news_event = { ## CANTERLOT
 
 	trigger = {
 		3 = { is_controlled_by = CHN }
-		3 = { is_owned_by = EQS }
-		CHN = { has_war_with = EQS }
+		OR = {
+			3 = { is_owned_by = EQS }
+			3 = { is_owned_by = SOL }
+		}
+		OR = {
+			CHN = { has_war_with = EQS }
+			CHN = { has_war_with = SOL }
+		}
 		NOT = { has_global_flag = fall_of_canterlot_chn }
 	}
 	immediate = {
@@ -1757,6 +1786,7 @@ news_event = { ## CANTERLOT
 			NOT = {
 				TAG = CHN
 				TAG = EQS
+				TAG = SOL
 				TAG = CRY
 			}
 		}
@@ -1766,6 +1796,7 @@ news_event = { ## CANTERLOT
 		trigger = {
 			OR = {
 				TAG = EQS
+				TAG = SOL
 				TAG = CRY
 			}
 		}
@@ -1805,6 +1836,7 @@ news_event = { ## CRYSTAL CITY
 			NOT = {
 				TAG = CHN
 				TAG = EQS
+				TAG = SOL
 				TAG = CRY
 			}
 		}
@@ -1814,6 +1846,7 @@ news_event = { ## CRYSTAL CITY
 		trigger = {
 			OR = {
 				TAG = EQS
+				TAG = SOL
 				TAG = CRY
 			}
 		}
@@ -1875,8 +1908,14 @@ news_event = { # Fall of Shire
 
 	trigger = {
 		132 = { is_controlled_by = CHN }
-		132 = { is_owned_by = EQS }
-		CHN = { has_war_with = EQS }
+		OR = {
+			132 = { is_owned_by = EQS }
+			132 = { is_owned_by = SOL }
+		}
+		OR = {
+			CHN = { has_war_with = EQS }
+			CHN = { has_war_with = SOL }
+		}
 		NOT = { has_global_flag = fall_of_shire_chn }
 	}
 
@@ -1893,13 +1932,14 @@ news_event = { # Fall of Shire
 		trigger = {
 			NOT = {
 				TAG = EQS
+				TAG = SOL
 				TAG = CHN
 			}
 		}
 	}
 	option = {
 		name = news.104.b
-		trigger = { TAG = EQS }
+		trigger = { OR = { TAG = EQS TAG = SOL } }
 	}
 	option = {
 		name = news.104.c
@@ -1916,8 +1956,14 @@ news_event = { # Fall of Los Pegasus
 
 	trigger = {
 		66 = { is_controlled_by = CHN }
-		66 = { is_owned_by = EQS }
-		CHN = { has_war_with = EQS }
+		OR = {
+			66 = { is_owned_by = EQS }
+			66 = { is_owned_by = SOL }
+		}
+		OR = {
+			CHN = { has_war_with = EQS }
+			CHN = { has_war_with = SOL }
+		}
 		NOT = { has_global_flag = fall_of_lospegasus_chn }
 	}
 
@@ -1934,13 +1980,14 @@ news_event = { # Fall of Los Pegasus
 		trigger = {
 			NOT = {
 				TAG = EQS
+				TAG = SOL
 				TAG = CHN
 			}
 		}
 	}
 	option = {
 		name = news.105.b
-		trigger = { TAG = EQS  }
+		trigger = { OR = { TAG = EQS  TAG = SOL } }
 	}
 	option = {
 		name = news.105.c
@@ -1957,8 +2004,14 @@ news_event = { # Fall of Manehattan
 
 	trigger = {
 		75 = { is_controlled_by = CHN }
-		75 = { is_owned_by = EQS }
-		CHN = { has_war_with = EQS }
+		OR = {
+			75 = { is_owned_by = EQS }
+			75 = { is_owned_by = SOL }
+		}
+		OR = {
+			CHN = { has_war_with = EQS }
+			CHN = { has_war_with = SOL }
+		}
 		NOT = { has_global_flag = fall_of_manehattan_chn }
 	}
 
@@ -1975,13 +2028,14 @@ news_event = { # Fall of Manehattan
 		trigger = {
 			NOT = {
 				TAG = EQS
+				TAG = SOL
 				TAG = CHN
 			}
 		}
 	}
 	option = {
 		name = news.106.b
-		trigger = { TAG = EQS }
+		trigger = { OR = { TAG = EQS TAG = SOL } }
 	}
 	option = {
 		name = news.106.c
@@ -1998,8 +2052,14 @@ news_event = { # Fall of Canterlot
 
 	trigger = {
 		3 = { is_controlled_by = NLR }
-		3 = { is_owned_by = EQS }
-		NLR = { has_war_with = EQS }
+		OR = {
+			3 = { is_owned_by = EQS }
+			3 = { is_owned_by = SOL }
+		}
+		OR = {
+			NLR = { has_war_with = EQS }
+			NLR = { has_war_with = SOL }
+		}
 		NOT = { has_global_flag = fall_of_canterlot_nlr }
 	}
 
@@ -2016,13 +2076,14 @@ news_event = { # Fall of Canterlot
 		trigger = {
 			NOT = {
 				TAG = EQS
+				TAG = SOL
 				TAG = NLR
 			}
 		}
 	}
 	option = {
 		name = news.107.b
-		trigger = { TAG = EQS }
+		trigger = { OR = { TAG = EQS TAG = SOL } }
 	}
 	option = {
 		name = news.107.c
@@ -2038,17 +2099,8 @@ news_event = { # Fall of Canterlot
 	major = yes
 
 	trigger = {
-		3 = { 
-			controller = {
-				original_tag = EQS
-				has_government = communism
-			}
-		}
+		3 = { is_controlled_by = EQS }
 		EQS = { has_civil_war = yes }
-		any_country = {
-			original_tag = EQS
-			has_government = communism
-		}
 		NOT = { has_global_flag = fall_of_canterlot_com }
 	}
 
@@ -2089,8 +2141,14 @@ news_event = { # Fall of Canterlot
 
 	trigger = {
 		3 = { is_controlled_by = STG }
-		3 = { is_owned_by = EQS }
-		STG = { has_war_with = EQS }
+		OR = {
+			3 = { is_owned_by = EQS }
+			3 = { is_owned_by = SOL }
+		}
+		OR = {
+			STG = { has_war_with = EQS }
+			STG = { has_war_with = SOL }
+		}
 		NOT = { has_global_flag = fall_of_canterlot_stg }
 	}
 
@@ -2108,12 +2166,13 @@ news_event = { # Fall of Canterlot
 			NOT = {
 				TAG = EQS
 				TAG = STG
+				TAG = SOL
 			}
 		}
 	}
 	option = {
 		name = news.109.b
-		trigger = { TAG = EQS }
+		trigger = { OR = { TAG = EQS TAG = SOL } }
 	}
 	option = {
 		name = news.109.c
@@ -2130,8 +2189,14 @@ news_event = { # Fall of Canterlot
 
 	trigger = {
 		153 = { is_owned_by = STG }
-		153 = { is_controlled_by = EQS }
-		STG = { has_war_with = EQS }
+		OR = {
+			153 = { is_controlled_by = EQS }
+			153 = { is_controlled_by = SOL }
+		}
+		OR = {
+			STG = { has_war_with = EQS }
+			STG = { has_war_with = SOL }
+		}
 		NOT = { has_global_flag = fall_of_stalliongrad_eqs }
 	}
 
@@ -2149,12 +2214,13 @@ news_event = { # Fall of Canterlot
 			NOT = {
 				TAG = EQS
 				TAG = STG
+				TAG = SOL
 			}
 		}
 	}
 	option = {
 		name = news.110.b
-		trigger = { TAG = EQS }
+		trigger = { OR = { TAG = EQS TAG = SOL } }
 	}
 	option = {
 		name = news.110.c
@@ -2166,7 +2232,10 @@ country_event = {
 	hidden = yes
 	mean_time_to_happen = { days = 1 }
 	trigger = {
-		EQS = { is_subject_of = CHN }
+	  OR = {
+			EQS = { is_subject_of = CHN }
+			SOL = { is_subject_of = CHN }
+		}
 		has_global_flag = the_war
 	}
 	fire_only_once = yes
@@ -2205,7 +2274,10 @@ country_event = {
 	hidden = yes
 	mean_time_to_happen = { days = 1 }
 	trigger = {
-		EQS = { exists = no }
+		AND = {
+			EQS = { exists = no }
+			SOL = { exists = no }
+		}
 		has_global_flag = the_war
 	}
 	fire_only_once = yes
@@ -2243,8 +2315,14 @@ country_event = {
 	hidden = yes
 	trigger = {
 		3 = { is_controlled_by = CRY }
-		3 = { is_owned_by = EQS }
-		CRY = { has_war_with = EQS }
+		OR = {
+			3 = { is_owned_by = EQS }
+			3 = { is_owned_by = SOL }
+		}
+		OR = {
+			CRY = { has_war_with = EQS }
+			CRY = { has_war_with = SOL }
+		}
 		NOT = { has_global_flag = fall_of_canterlot_cry }
 		CRY = { has_government = fascism }
 	}
@@ -2274,6 +2352,7 @@ news_event = { # Sombra Takes Canterlot
 		trigger = {
 			NOT = {
 				TAG = EQS
+				TAG = SOL
 				TAG = CRY
 			}
 		}
@@ -2284,15 +2363,21 @@ news_event = { # Sombra Takes Canterlot
 	}
 	option = {
 		name = news.113.c
-		trigger = { TAG = EQS }
+		trigger = { OR = { TAG = EQS TAG = SOL } }
 	}
 }
 country_event = {
 	id = news.1141
 	hidden = yes
 	trigger = {
-		75 = { is_controlled_by = EQS }
-		NLR = { has_war_with = EQS }
+		OR = {
+			75 = { is_controlled_by = EQS }
+			75 = { is_controlled_by = SOL }
+		}
+		OR = {
+			NLR = { has_war_with = EQS }
+			NLR = { has_war_with = SOL }
+		}
 		75 = { is_owned_by = NLR }
 		NOT = { has_global_flag = fall_of_manehattan_eqs }
 	}
@@ -2324,6 +2409,7 @@ news_event = {
 			NOT = {
 				TAG = CRY
 				TAG = EQS
+				TAG = SOL
 				TAG = NLR
 			}
 		}
@@ -2333,6 +2419,7 @@ news_event = {
 		trigger = {
 			OR = {
 				TAG = EQS
+				TAG = SOL
 				TAG = CRY
 			}
 		}
@@ -2352,8 +2439,14 @@ news_event = { # Fall of Tall Tales
 
 	trigger = {
 		59 = { is_controlled_by = CHN }
-		59 = { is_owned_by = EQS }
-		CHN = { has_war_with = EQS }
+		OR = {
+			59 = { is_owned_by = EQS }
+			59 = { is_owned_by = SOL }
+		}
+		OR = {
+			CHN = { has_war_with = EQS }
+			CHN = { has_war_with = SOL }
+		}
 		NOT = { has_global_flag = fall_of_tall_tales_chn }
 	}
 
@@ -2371,12 +2464,13 @@ news_event = { # Fall of Tall Tales
 			NOT = {
 				TAG = EQS
 				TAG = CHN
+				TAG = SOL
 			}
 		}
 	}
 	option = {
 		name = news.115.b
-		trigger = { TAG = EQS }
+		trigger = { OR = { TAG = EQS TAG = SOL } }
 	}
 	option = {
 		name = news.115.c
@@ -2393,8 +2487,14 @@ news_event = { # Fall of Baltimare
 
 	trigger = {
 		13 = { is_controlled_by = CHN }
-		13 = { is_owned_by = EQS }
-		CHN = { has_war_with = EQS }
+		OR = {
+			13 = { is_owned_by = EQS }
+			13 = { is_owned_by = SOL }
+		}
+		OR = {
+			CHN = { has_war_with = EQS }
+			CHN = { has_war_with = SOL }
+		}
 		NOT = { has_global_flag = fall_of_baltimare_chn }
 	}
 
@@ -2411,13 +2511,14 @@ news_event = { # Fall of Baltimare
 		trigger = {
 			NOT = {
 				TAG = EQS
+				TAG = SOL
 				TAG = CHN
 			}
 		}
 	}
 	option = {
 		name = news.116.b
-		trigger = { TAG = EQS  }
+		trigger = { OR = { TAG = EQS TAG = SOL } }
 	}
 	option = {
 		name = news.116.c
@@ -2564,7 +2665,7 @@ news_event = {
 		option = {
 			name = news.cry.0.b
 			trigger = {
-				TAG = EQS
+				OR = { TAG = EQS TAG = SOL }
 			}
 		}
 		option = {
@@ -2580,6 +2681,7 @@ news_event = {
 					TAG = CRY
 					TAG = CHN
 					TAG = EQS
+					TAG = SOL
 				}
 			}
 		}
@@ -2604,7 +2706,7 @@ news_event = {
 		option = {
 			name = news.cry.1.b
 			trigger = {
-				TAG = EQS
+				OR = { TAG = EQS TAG = SOL }
 			}
 		}
 		option = {
@@ -2620,6 +2722,7 @@ news_event = {
 					TAG = CRY
 					TAG = CHN
 					TAG = EQS
+					TAG = SOL
 				}
 			}
 		}
@@ -2871,19 +2974,20 @@ news_event = {
 	option = {
 		name = news.sol.1.a
 		trigger = {
-			tag = event_target:equestria
+			tag = EQS
 		}
 	}
 	option = {
 		name = news.sol.1.b
 		trigger = {
-			tag = event_target:solar_empire
+			tag = SOL
 		}
 	}
 	option = {
 		name = news.sol.1.c
 		trigger = {
 			NOT = {
+				tag = SOL
 				tag = EQS
 			}
 		}
@@ -2897,8 +3001,8 @@ country_event = {
 		AND = {
 			has_global_flag = equestrian_civil_war_daybreaker
 			OR = {
-				NOT = { country_exists = event_target:solar_empire }
-				event_target:solar_empire = {
+				NOT = { country_exists = SOL }
+				SOL = {
 					is_subject = yes
 					has_capitulated = yes
 				}
@@ -2946,8 +3050,8 @@ country_event = {
 	trigger = {
 		has_global_flag = equestrian_civil_war_daybreaker
 		OR = {
-			NOT = { country_exists = event_target:equestria }
-			event_target:equestria = {
+			NOT = { country_exists = EQS }
+			EQS = {
 				is_subject = yes
 				has_capitulated = yes
 			}
@@ -2990,15 +3094,15 @@ news_event = { ## Wartime ascension
 	option = {
 		name = news.sol.4.a
 		trigger = {
-			tag = event_target:solar_empire
+			tag = SOL
 		}
 	}
 	option = {
 		name = news.sol.4.b
 		trigger = {
 			NOT = {
-				tag = event_target:solar_empire
-				has_war_with = event_target:solar_empire
+				tag = SOL
+				has_war_with = SOL
 			}
 		}
 	}
@@ -3006,9 +3110,9 @@ news_event = { ## Wartime ascension
 		name = news.sol.4.c
 		trigger = {
 			NOT = {
-				tag = event_target:solar_empire
+				tag = SOL
 			}
-			has_war_with = event_target:solar_empire
+			has_war_with = SOL
 		}
 	}
 }
@@ -3018,7 +3122,7 @@ news_event = {
     id = deadempirenews.1
     title = deadempirenews.1.t
     desc = deadempirenews.1.d
-    picture = GFX_news_event_badlands
+    picture = GFX_badlands
 
 	is_triggered_only = yes
 
@@ -3102,7 +3206,7 @@ news_event = {
     id = deadempirenews.2
     title = deadempirenews.2.t
     desc = deadempirenews.2.d
-    picture = GFX_news_event_badlands
+    picture = GFX_badlands
 
 	is_triggered_only = yes
 
@@ -3182,24 +3286,12 @@ news_event = {
     id = arcturiannews.1
     title = arcturiannews.1.t
     desc = arcturiannews.1.d
-    picture = GFX_news_griffonia_landscape
+    picture = GFX_badlands
 
 	is_triggered_only = yes
 
 	major = yes
-	show_major = {
-		original_tag = HLR
-		original_tag = DED
-		original_tag = FAR
-		original_tag = WAT
-		original_tag = NCH
-		NOT = {
-			is_on_equestrian_continent = yes
-		}
-		NOT = {
-			is_griffon_continent_griffon_country = yes
-		}
-	}
+
 
 	option = {
 		name = arcturiannews.1.a
@@ -3232,7 +3324,7 @@ news_event = {
     id = arcturiannews.2
     title = arcturiannews.2.t
     desc = arcturiannews.2.d
-    picture = GFX_news_griffonia_landscape
+    picture = GFX_badlands
 
 	is_triggered_only = yes
 
@@ -3253,7 +3345,7 @@ news_event = {
     id = arcturiannews.3
     title = arcturiannews.3.t
     desc = arcturiannews.3.d
-    picture = GFX_news_griffonia_landscape
+    picture = GFX_badlands
 
 	is_triggered_only = yes
 
@@ -3290,7 +3382,7 @@ news_event = {
     id = arcturiannews.4
     title = arcturiannews.4.t
     desc = arcturiannews.4.d
-    picture = GFX_news_griffonia_landscape
+    picture = GFX_badlands
 
 	is_triggered_only = yes
 

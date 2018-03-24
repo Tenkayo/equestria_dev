@@ -8,8 +8,8 @@ state={
 	state_category = pastoral
 	manpower=102477
 	history = {
-		owner = NTR
-		add_core_of = NTR
+		owner = SRS
+		add_core_of = SRS
 	}
 	buildings_max_level_factor=1.000
 }
