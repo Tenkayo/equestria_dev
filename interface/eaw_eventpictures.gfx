@@ -549,8 +549,11 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/event_magehold.dds"
 	}
 	spriteType = {
-		name = "GFX_news_magehold"
-		texturefile = "gfx/event_pictures/news_magehold.dds"
+		name = "GFX_news_Griffonstone_Guto"
+		texturefile = "gfx/event_pictures/news_Griffonstone_Guto.dds"
 	}
-	
+	spriteType = {
+		name = "GFX_news_Griffonstone_Griffonstone"
+		texturefile = "gfx/event_pictures/news_Griffonstone_Griffonstone.dds"
+	}	
 }

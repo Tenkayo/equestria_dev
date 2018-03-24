@@ -1,0 +1,30 @@
+focus_tree = {
+	id = Griffonstone_Focus
+
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 10
+			tag = BOI
+		}
+	}
+	continuous_focus_position = { x = 290 y = 2500 }
+
+	focus = {
+		id = BOI_Griffonstone_Assembly
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 15.00
+		x = 8
+		y = 0
+		ai_will_do = {
+			factor = 100
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 150
+			custom_effect_tooltip = A Monarch will be chosen
+		}
+
+	}

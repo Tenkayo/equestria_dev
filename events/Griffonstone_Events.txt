@@ -1,0 +1,28 @@
+add_namespace = griffonstone
+
+news_event = {
+         id = griffonstone.1
+         title = griffonstone.1.t
+         desc = griffonstone.1.d
+         picture = GFX_news_Griffonstone_Griffonstone
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.1.a
+           }
+}
+
+
+news_event = {
+         id = griffonstone.2
+         title = griffonstone.2.t
+         desc = griffonstone.2.d
+         picture = GFX_news_Griffonstone_Guto
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.2.a
+           }
+}
