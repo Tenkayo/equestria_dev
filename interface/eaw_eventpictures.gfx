@@ -554,10 +554,10 @@ spriteTypes = {
     }
 	spriteType = {
 		name = "GFX_news_Griffonstone_Guto"
-		texturefile = "gfx/event_pictures/news_Griffonstone_Guto.dds"
+		texturefile = "gfx/event_pictures/news_griffonstone_guto.dds"
 	}
 	spriteType = {
 		name = "GFX_news_Griffonstone_Griffonstone"
-		texturefile = "gfx/event_pictures/news_Griffonstone_Griffonstone.dds"
+		texturefile = "gfx/event_pictures/news_griffonstone_griffonstone.dds"
 	}	
 }
