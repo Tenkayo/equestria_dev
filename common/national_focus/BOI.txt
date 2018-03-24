@@ -15,8 +15,34 @@ focus_tree = {
 		id = BOI_Griffonstone_Assembly
 		icon = GFX_goal_generic_neutrality_focus
 		cost = 15.00
-		x = 8
+		x = 10
 		y = 0
+		ai_will_do = {
+			factor = 100
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 150
+		country_event = { days = 1 id = griffonstone.3 }
+		}
+	}
+
+	focus = {
+		id = BOI_King_Gallus
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 15.00
+		x = 10
+		y = 1
+    	available = {
+        has_country_flag = KingGallus
+    	}
+    	prerequisite = {
+        	focus = BOI_Griffonstone_Assembly
+    	}
+    	mutually_exclusive = {
+        	focus = BOI_King_Moore focus = BOI_Queen_Gilda
+    	}
 		ai_will_do = {
 			factor = 100
 		}
@@ -26,5 +52,56 @@ focus_tree = {
 			add_political_power = 150
 			custom_effect_tooltip = A Monarch will be chosen
 		}
+	}
 
+	focus = {
+		id = BOI_Queen_Gilda
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 10.00
+		x = 5
+		y = 1
+    	available = {
+        has_country_flag = QueenGilda
+    	}
+    	prerequisite = {
+        	focus = BOI_Griffonstone_Assembly
+    	}
+    	mutually_exclusive = {
+        	focus = BOI_King_Moore focus = BOI_King_Gallus
+    	}
+		ai_will_do = {
+			factor = 100
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 150
+			custom_effect_tooltip = A Monarch will be chosen
+		}
+	}
+
+	focus = {
+		id = BOI_King_Moore
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 15.00
+		x = 15
+		y = 1
+    	available = {
+        has_country_flag = KingMoore
+    	}
+    	prerequisite = {
+        	focus = BOI_Griffonstone_Assembly
+    	}
+    	mutually_exclusive = {
+        	focus = BOI_Queen_Gilda focus = BOI_King_Gallus
+    	}
+		ai_will_do = {
+			factor = 100
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 150
+			custom_effect_tooltip = A Monarch will be chosen
+		}
 	}

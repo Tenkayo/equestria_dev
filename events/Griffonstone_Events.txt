@@ -1,5 +1,23 @@
 add_namespace = griffonstone
 
+country_event = { #Gallus Death
+         id = griffonstone.0
+         title = griffonstone.0.t
+         desc = griffonstone.0.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.0.a
+			set_country_flag = QueenGilda
+           }
+         option = {      
+            name = griffonstone.0.b
+			set_country_flag = KingMoore
+           }
+}
+
 news_event = {
          id = griffonstone.1
          title = griffonstone.1.t
@@ -10,6 +28,8 @@ news_event = {
 
          option = {      
             name = griffonstone.1.a
+
+        	news_event = griffonstone.2
            }
 }
 
@@ -24,5 +44,361 @@ news_event = {
 
          option = {      
             name = griffonstone.2.a
+
+        	country_event = { days = 1 id = griffonstone.3 }
+           }
+}
+
+country_event = { #THE QUEST FOR THE IDOL OF BOREAS BEGINS HERE IF YOU LOOK AT THESE EVENTS YOU ARE A FILTHY CHEATER AND NOT THE TRUE EMPEROR -{Psody}
+         id = griffonstone.3
+         title = griffonstone.3.t
+         desc = griffonstone.3.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.3.a
+			add_to_variable = { var = Gallus value = 10 }
+        	country_event = { days = 1 id = griffonstone.4 }
+			hidden_effect = {
+			set_country_flag = Idol_Quest
+				}
+    		}
+}
+
+country_event = { #Descent into darkness Quest 2
+         id = griffonstone.4
+         title = griffonstone.4.t
+         desc = griffonstone.4.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.4.a
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.5 }
+				}
+           }
+         option = {      
+            name = griffonstone.4.b
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.6 }
+				}
+           }
+}
+
+country_event = { #Descent into darkness Quest 2 Succcess
+         id = griffonstone.5
+         title = griffonstone.5.t
+         desc = griffonstone.5.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.5.a
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.7 }
+				}
+           }
+}
+
+country_event = { #Descent into darkness Quest 2 Failure
+         id = griffonstone.6
+         title = griffonstone.6.t
+         desc = griffonstone.6.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.6.a
+			subtract_from_variable = { var = Gallus value = 2 }
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.7 }
+				}
+           }
+}
+
+country_event = { #Entering the labyrinth Quest 3
+         id = griffonstone.7
+         title = griffonstone.7.t
+         desc = griffonstone.7.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.7.a
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.10 }
+				}
+           }
+         option = {      
+            name = griffonstone.7.b
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.9 }
+				}
+           }
+         option = {      
+            name = griffonstone.7.c
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.8 }
+				}
+           }
+}
+
+country_event = {  #Entering the labyrinth Quest 3 Success
+         id = griffonstone.8
+         title = griffonstone.8.t
+         desc = griffonstone.8.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.7.a
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.11 }
+				}
+           }
+}
+
+country_event = { #Entering the labyrinth Quest 3 Reward
+         id = griffonstone.9
+         title = griffonstone.9.t
+         desc = griffonstone.9.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.9.a
+			add_to_variable = { var = Gallus value = 2 }
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.11 }
+				}
+           }
+}
+
+country_event = { #Entering the labyrinth Quest 3 Failure
+         id = griffonstone.10
+         title = griffonstone.10.t
+         desc = griffonstone.10.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.10.a
+			subtract_from_variable = { var = Gallus value = 2 }
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.11 }
+				}
+           }
+}
+
+country_event = { #Dueling The Dogs Quest 4
+         id = griffonstone.11
+         title = griffonstone.11.t
+         desc = griffonstone.10.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.11.a
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.12 }
+				}
+           }
+         option = {      
+            name = griffonstone.11.b
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.14 }
+				}
+           }
+         option = {      
+            name = griffonstone.11.c
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.13 }
+				}
+           }
+}
+
+country_event = { #Dueling The Dogs Quest 4 Failure
+         id = griffonstone.12
+         title = griffonstone.12.t
+         desc = griffonstone.12.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.12.a
+			subtract_from_variable = { var = Gallus value = 3 }
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.15 }
+				}
+           }
+}
+
+country_event = { #Dueling The Dogs Quest 4 Success
+         id = griffonstone.13 
+         title = griffonstone.13.t
+         desc = griffonstone.13.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.13.a
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.15 }
+				}
+           }
+}
+
+country_event = { #Dueling The Dogs Quest 4 Critical Failure INSTANT DEATH
+         id = griffonstone.14 
+         title = griffonstone.14.t
+         desc = griffonstone.14.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.14.a
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.0 }
+				}
+           }
+}
+
+country_event = { #Terror of the Wingindo 5
+         id = griffonstone.15
+         title = griffonstone.15.t
+         desc = griffonstone.15.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.15.a
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.17 }
+				}
+           }
+         option = {      
+            name = griffonstone.15.b
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.16 }
+				}
+           }
+         option = {      
+            name = griffonstone.15.c
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.16 }
+				}
+           }
+
+}
+
+country_event = { 
+         id = griffonstone.16 #Terror of the Wingindo 5 Failure
+         title = griffonstone.16.t
+         desc = griffonstone.16.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.16.a
+			subtract_from_variable = { var = Gallus value = 3 }
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.18 }
+				}
+           }
+}
+
+country_event = { 
+         id = griffonstone.17 #Terror of the Wingindo 5 Success
+         title = griffonstone.17.t
+         desc = griffonstone.17.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.17.a
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.18 }
+				}
+           }
+}
+
+country_event = { 
+         id = griffonstone.18 #An old relative
+         title = griffonstone.18.t
+         desc = griffonstone.18.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.18.a
+			add_to_variable = { var = Gallus value = 1 }
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.19 }
+				}
+           }
+         option = {      
+            name = griffonstone.18.b
+			hidden_effect = {
+			country_event = { days = 1 id = griffonstone.19 }
+				}
+           }
+}
+
+country_event = { 
+         id = griffonstone.19 #The duel with Arimaspi
+         title = griffonstone.19.t
+         desc = griffonstone.19.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.19.a
+			hidden_effect = {
+			if = {
+			limit = { check_variable = { Gallus > 4 }
+			OR = { check_variable = { Gallus > 3 } }
+			OR = { check_variable = { Gallus > 2 } }
+			OR = { check_variable = { Gallus > 1 } }
+			}
+			country_event = { days = 1 id = griffonstone.0 }
+			else = {
+			country_event = { days = 1 id = griffonstone.20 }
+			}
+			}
+		}
+	}
+}
+
+
+country_event = { 
+         id = griffonstone.20 #The Idol is recovered
+         title = griffonstone.20.t
+         desc = griffonstone.20.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.20.a
+			set_country_flag = KingGallus
            }
 }
