@@ -157,7 +157,7 @@ country_event = {  #Entering the labyrinth Quest 3 Success
          is_triggered_only = yes
 
          option = {      
-            name = griffonstone.7.a
+            name = griffonstone.8.a
 			hidden_effect = {
 			country_event = { days = 1 id = griffonstone.11 }
 				}
