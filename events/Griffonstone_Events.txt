@@ -338,7 +338,7 @@ country_event = {
 }
 
 country_event = { 
-         id = griffonstone.18 #An old relative
+         id = griffonstone.18 #stuck between a rock and a hard place
          title = griffonstone.18.t
          desc = griffonstone.18.d
          picture = GFX_event_griffon_mountain
@@ -347,21 +347,27 @@ country_event = {
 
          option = {      
             name = griffonstone.18.a
-			add_to_variable = { var = Gallus value = 1 }
-			hidden_effect = {
-			country_event = { days = 1 id = griffonstone.19 }
-				}
+            hidden_effect = {
+            country_event = { days = 1 id = griffonstone.19 }
+                }
            }
          option = {      
-            name = griffonstone.18.b
-			hidden_effect = {
-			country_event = { days = 1 id = griffonstone.19 }
-				}
+            name = griffonstone.18.a
+            add_to_variable = { var = Gallus value = 2 }
+            hidden_effect = {
+            country_event = { days = 1 id = griffonstone.20 }
+                }
            }
-}
+         option = {      
+            name = griffonstone.18.a
+            hidden_effect = {
+            country_event = { days = 1 id = griffonstone.21 }
+                }
+           }
+    }
 
 country_event = { 
-         id = griffonstone.19 #The duel with Arimaspi
+         id = griffonstone.19 #stuck between a rock and a hard place BOREAS
          title = griffonstone.19.t
          desc = griffonstone.19.d
          picture = GFX_event_griffon_mountain
@@ -370,6 +376,56 @@ country_event = {
 
          option = {      
             name = griffonstone.19.a
+            hidden_effect = {
+            country_event = { days = 1 id = griffonstone.22 }
+                }
+           }
+}
+
+country_event = { 
+         id = griffonstone.20 #stuck between a rock and a hard place UNMARKED
+         title = griffonstone.20.t
+         desc = griffonstone.20.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.20.a
+            subtract_from_variable = { var = Gallus value = 2 }
+            hidden_effect = {
+            country_event = { days = 1 id = griffonstone.22 }
+                }
+           }
+}
+
+country_event = { 
+         id = griffonstone.21 #stuck between a rock and a hard place MAAR
+         title = griffonstone.21.t
+         desc = griffonstone.21.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.21.a
+            hidden_effect = {
+            add_to_variable = { var = Gallus value = 2 }
+            country_event = { days = 1 id = griffonstone.22 }
+                }
+           }
+}
+
+country_event = { 
+         id = griffonstone.22 #The duel with Arimaspi
+         title = griffonstone.22.t
+         desc = griffonstone.22.d
+         picture = GFX_event_griffon_mountain
+
+         is_triggered_only = yes
+
+         option = {      
+            name = griffonstone.22.a
 			hidden_effect = {
 			if = {
 			limit = { check_variable = { Gallus > 6 }
@@ -380,9 +436,11 @@ country_event = {
 			OR = { check_variable = { Gallus > 11 } }
 			OR = { check_variable = { Gallus > 12 } }
 			OR = { check_variable = { Gallus > 13 } }
-
+            OR = { check_variable = { Gallus > 14 } }
+            OR = { check_variable = { Gallus > 15 } }
+            
 			}
-			country_event = { days = 1 id = griffonstone.20 }
+			country_event = { days = 1 id = griffonstone.23 }
 			else = {
 			country_event = { days = 1 id = griffonstone.0 }
 			}
@@ -391,17 +449,16 @@ country_event = {
 	}
 }
 
-
 country_event = { 
-         id = griffonstone.20 #The Idol is recovered
-         title = griffonstone.20.t
-         desc = griffonstone.20.d
+         id = griffonstone.23 #The Idol is recovered
+         title = griffonstone.23.t
+         desc = griffonstone.23.d
          picture = GFX_event_griffon_mountain
 
          is_triggered_only = yes
 
          option = {      
-            name = griffonstone.20.a
+            name = griffonstone.23.a
 			set_country_flag = KingGallus
            }
 }
