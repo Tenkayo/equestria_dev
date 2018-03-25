@@ -372,14 +372,19 @@ country_event = {
             name = griffonstone.19.a
 			hidden_effect = {
 			if = {
-			limit = { check_variable = { Gallus > 4 }
-			OR = { check_variable = { Gallus > 3 } }
-			OR = { check_variable = { Gallus > 2 } }
-			OR = { check_variable = { Gallus > 1 } }
+			limit = { check_variable = { Gallus > 6 }
+			OR = { check_variable = { Gallus > 7 } }
+			OR = { check_variable = { Gallus > 8 } }
+			OR = { check_variable = { Gallus > 9 } }
+			OR = { check_variable = { Gallus > 10 } }
+			OR = { check_variable = { Gallus > 11 } }
+			OR = { check_variable = { Gallus > 12 } }
+			OR = { check_variable = { Gallus > 13 } }
+
 			}
-			country_event = { days = 1 id = griffonstone.0 }
-			else = {
 			country_event = { days = 1 id = griffonstone.20 }
+			else = {
+			country_event = { days = 1 id = griffonstone.0 }
 			}
 			}
 		}
