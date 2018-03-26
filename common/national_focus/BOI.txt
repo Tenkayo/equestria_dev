@@ -14,8 +14,8 @@ focus_tree = {
 	focus = {
 		id = BOI_Griffonstone_Assembly
 		icon = GFX_goal_generic_neutrality_focus
-		cost = 15.00
-		x = 10
+		cost = 20.00
+		x = 14
 		y = 0
 		ai_will_do = {
 			factor = 100
@@ -32,7 +32,7 @@ focus_tree = {
 		id = BOI_King_Gallus
 		icon = GFX_goal_generic_neutrality_focus
 		cost = 15.00
-		x = 10
+		x = 5
 		y = 1
     	available = {
         has_country_flag = KingGallus
@@ -40,41 +40,184 @@ focus_tree = {
     	prerequisite = {
         	focus = BOI_Griffonstone_Assembly
     	}
-    	mutually_exclusive = {
-        	focus = BOI_King_Moore focus = BOI_Queen_Gilda
-    	}
+
 		ai_will_do = {
 			factor = 100
 		}
 		available_if_capitulated = no
 
 		completion_reward = {
-			add_political_power = 150
 		}
 	}
+
+
+	focus = {
+		id = BOI_Restore_The_Rule_Of_Law
+		icon = GFX_goal_generic_attack_allies
+		cost = 10.00
+		x = 0
+		y = 1
+        relative_position_id = BOI_King_Gallus
+    	prerequisite = {
+        	focus = BOI_King_Gallus
+    	}
+
+		ai_will_do = {
+			factor = 100
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+		create_wargoal = { type = annex_everything target = BAN }	}
+		}
+	focus = {
+		id = BOI_Offer_Sanctuary_To_The_Downtrodden
+		icon = GFX_goal_generic_national_unity
+		cost = 10.00
+		x = 0
+		y = 2
+        relative_position_id = BOI_King_Gallus
+    	prerequisite = {
+        	focus = BOI_Restore_The_Rule_Of_Law
+    	}
+    	available = {
+    	    BAN = { exists = no }
+			446 = { is_owned_by = BOI }
+			489 = { is_owned_by = BOI }
+			531 = { is_owned_by = BOI }
+			488 = { is_owned_by = BOI }
+			471 = { is_owned_by = BOI }
+			389 = { is_owned_by = BOI }
+			679 = { is_owned_by = BOI }
+    	}
+		ai_will_do = {`
+			factor = 100
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_state_core = 446
+		489 = { add_manpower = 10000 }
+		531 = { add_manpower = 5000 }
+		488 = { add_manpower = 8000 }
+		471 = { add_manpower = 6000 }
+		389 = { add_manpower = 25000 }
+		679 = { add_manpower = 9000 }
+		}
+	}
+	focus = {
+		id = BOI_Seize_Silverstone
+		icon = GFX_goal_silver_reserve
+		cost = 10.00
+		x = 2
+		y = 1
+        relative_position_id = BOI_King_Gallus
+    	prerequisite = {
+        	focus = BOI_King_Gallus
+    	}
+
+		ai_will_do = {
+			factor = 100
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BOI_Seize_Goldstone
+		icon = GFX_goal_gold_reserve
+		cost = 10.00
+		x = 2
+		y = 2
+        relative_position_id = BOI_King_Gallus
+    	prerequisite = {
+        	focus = BOI_Seize_Silverstone
+    	}
+
+		ai_will_do = {
+			factor = 100
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BOI_Demand_Nobles_Bend
+		icon = GFX_focus_rom_royal_dictatorship
+		cost = 10.00
+		x = -2
+		y = 1
+        relative_position_id = BOI_King_Gallus
+    	prerequisite = {
+        	focus = BOI_King_Gallus
+    	}
+
+		ai_will_do = {
+			factor = 100
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BOI_Redistribute_Land_To_Peasntry
+		icon = GFX_goal_agrarian_reform
+		cost = 10.00
+		x = -2
+		y = 2
+        relative_position_id = BOI_King_Gallus
+    	prerequisite = {
+        	focus = BOI_Demand_Nobles_Bend
+    	}
+
+		ai_will_do = {
+			factor = 100
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	focus = {
 		id = BOI_Queen_Gilda
 		icon = GFX_goal_generic_neutrality_focus
 		cost = 10.00
-		x = 5
+		x = 14
 		y = 1
-    	available = {
-        has_country_flag = QueenGilda
-    	}
+
     	prerequisite = {
         	focus = BOI_Griffonstone_Assembly
     	}
-    	mutually_exclusive = {
-        	focus = BOI_King_Moore focus = BOI_King_Gallus
-    	}
+
 		ai_will_do = {
 			factor = 100
 		}
 		available_if_capitulated = no
 
 		completion_reward = {
-			add_political_power = 150
 		}
 	}
 
@@ -82,7 +225,7 @@ focus_tree = {
 		id = BOI_King_Moore
 		icon = GFX_goal_generic_neutrality_focus
 		cost = 15.00
-		x = 15
+		x = 22
 		y = 1
     	available = {
         has_country_flag = KingMoore
@@ -99,6 +242,5 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			add_political_power = 150
 		}
 	}
