@@ -53,7 +53,13 @@ country_event = { #THE QUEST FOR THE IDOL OF BOREAS BEGINS HERE IF YOU LOOK AT T
          desc = griffonstone.3.d
          picture = GFX_event_griffon_mountain
 
-         is_triggered_only = yes
+         trigger = { 
+            tag = BOI
+            country_exists = BOI
+            focus_progress = { focus = BOI_Griffonstone_Assembly progress > 0.1 }
+         }
+
+         fire_only_once = yes
 
          option = {      
             name = griffonstone.3.a

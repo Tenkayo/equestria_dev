@@ -24,7 +24,6 @@ focus_tree = {
 
 		completion_reward = {
 		add_political_power = 150
-		country_event = { days = 1 id = griffonstone.3 }
 		}
 	}
 
@@ -74,9 +73,12 @@ focus_tree = {
 		id = BOI_Offer_Sanctuary_To_The_Downtrodden
 		icon = GFX_goal_generic_national_unity
 		cost = 10.00
-		x = 0
+		x = 1
 		y = 2
         relative_position_id = BOI_King_Gallus
+    	prerequisite = {
+        	focus = BOI_Demand_Nobles_Bend
+    	}
     	prerequisite = {
         	focus = BOI_Restore_The_Rule_Of_Law
     	}
@@ -128,7 +130,7 @@ focus_tree = {
 		id = BOI_Seize_Goldstone
 		icon = GFX_goal_gold_reserve
 		cost = 10.00
-		x = 2
+		x = 3
 		y = 2
         relative_position_id = BOI_King_Gallus
     	prerequisite = {
@@ -166,13 +168,15 @@ focus_tree = {
 		id = BOI_Redistribute_Land_To_Peasntry
 		icon = GFX_goal_agrarian_reform
 		cost = 10.00
-		x = -2
+		x = -1
 		y = 2
         relative_position_id = BOI_King_Gallus
     	prerequisite = {
         	focus = BOI_Demand_Nobles_Bend
     	}
-
+    	prerequisite = {
+        	focus = BOI_Restore_The_Rule_Of_Law
+    	}
 		ai_will_do = {
 			factor = 100
 		}
