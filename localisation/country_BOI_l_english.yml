@@ -107,3 +107,22 @@ griffonstone.20.a:0 ""
 ###########################################
 ### COUNTRY STUFF #########################
 ###########################################
+
+BOI_neutrality:0 "Kingdom of Griffinstone"
+BOI_fascism:0 "Kingdom of Griffinstone"
+BOI_communism:0 "Soviet State of Griffinstone"
+BOI_democratic:0 "Kingdom of Griffinstone"
+BOI_neutrality_DEF:0 "The Kingdom of Griffinstone"
+BOI_fascism_DEF:0 "The Kingdom of Griffinstone"
+BOI_communism_DEF:0 "The Soviet State of Griffinstone"
+BOI_democratic_DEF:0 "The Kingdom of Griffinstone"
+BOI_fascism_ADJ:0 "Griffinstone"
+BOI_democratic_ADJ:0 "Griffinstone"
+BOI_neutrality_ADJ:0 "Griffinstone"
+BOI_communism_ADJ:0 "Griffinstone"
+
+BOI_neutrality_party:0 "The Old Court"
+BOI_communism_party:0 "Cradle of Equality"
+BOI_democratic_party:0 "GGC"
+BOI_democratic_party_long:0 "Greater Griffonian Coalition"
+BOI_fascism_party:0 "The Boreal's Followers"
