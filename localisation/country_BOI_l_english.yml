@@ -10,6 +10,99 @@
 ###########################################
 ### EVENTS ################################
 ###########################################
+griffonstone.0.t:0 "Gallus Dies"
+griffonstone.0.d:0 "Birb waifu is ded"
+griffonstone.0.a:0 "Oh noes"
+
+griffonstone.1.t:0 "#TODO"
+griffonstone.1.d:0 "#TODO"
+griffonstone.1.a:0 "#TODO"
+
+
+griffonstone.2.t:0 "#TODO"
+griffonstone.2.d:0 "#TODO"
+griffonstone.2.a:0 "#TODO"
+
+
+griffonstone.3.t:0 "Gallus to Search for the Idol of Boreas"
+griffonstone.3.d:0 "Every Griffon is well versed in the old stories of the Idol of Boreas, and of the many failures of those daring, brave or foolish enough to try to recover it. The prize is an alluring one, but the risks and dangers are simply too great for any Griffon. Grampa Gruff said as much, and has forbidden his nephew Gallus to ever attempt the fool's errand.\n\nWell, it's a good thing that Gallus never liked being told what to do.\n\nWhile everyone else is busy squabbling and squawking over the kingless throne, Gallus has every intention of finally restoring the Kingship that has been absent from Griffonstone since King Guto.\n\nTaking to heart his grandfather's descriptions and stories, Gallus readies himself for what may come in the following days, packing plenty of food and water and arming himself with his family's sword.\n\nOne thing is for certain: he will either return as King of Griffonstone, or he won't return at all."
+griffonstone.3.a:0 "That cub will get himself killed..."
+
+griffonstone.4.t:0 "The Abysmal Abyss"
+griffonstone.4.d:0 "Legends have it that the thief, Arimaspi, fell upon into what then became known as the Abysmal Abyss. Few Griffons have attempted to fully explore the ravine, and fewer still have managed to return, telling of impossible heights and treacherous winds that make flight and spelunking nearly impossible.\n\nGallus, however, has come prepared.\n\nWith taut rope, he begins his descent down into the Abyss. Eventually, as the winds pick up strength, Gallus notices that there is a small ledge leading down. It's large enough for him to stand on, but there's no room for error should he suffer a misstep here, and with worsening winds, it's all the more likely.\n\nGallus could continue climbing down directly, but he is running out of rope, and the bottom is nowhere in sight. Either option is a gamble."
+griffonstone.4.a:0 "Better to have solid stone to stand upon."
+griffonstone.4.b:0 "It can't be much further down, can it? The rope will be enough."
+
+griffonstone.5.t:0 "A Close Call"
+griffonstone.5.d:0 "Edging along a narrow ledge might not be the best course of action, but neither is spelunking while in armour and unfavourable weather. With more than a little stuggle, Gallus manages to reach the perch and begins to slowly follow the path down, hugging the rock face.\n\nAt one point, a particularly strong gust of air catches Gallus off guard and loses his clawhold. He throws his foreleg to try to balance himself and, after a tense moment, manages to grab unto a rocky outcrop.\n\nHeart beating hard, Gallus continues his descent at a slower and more cautious pace. Eventually, he can finally see the bottom of the Abyss, and the final few minutes go smoothly. Claws and paws on solid ground, Gallus has beaten the Abyssal Abyss."
+griffonstone.5.a:0 "That was too close."
+
+griffonstone.6.t:0 "An Unfortunate Fall"
+griffonstone.6.d:0 "Gallus trusts his rope, so he decides to continue downwards. Minutes pass, and it's becoming increasingly clear that he didn't bring enough to reach the bottom of the ravine. When he's reached the end of his rope though, Gallus can finally see the ground, though it's still a ways away; he could fly the rest of the way down however...\n\nHis mind made up, Gallus detaches himself from his lifeline and takes flight. It goes well at first, but a sudden gust throws him off and he smashes against the rock face and tumbles downwards.\n\nJust before it's too late, Gallus manages to recover and softens the landing with a series of quick beats of his wings.\n\nHe's made it, but came out of it a little worse for wear. That collision left probably left a nasty bruise under Gallus's armour, and he'll likely feel it in the morning..."
+griffonstone.6.a:0 "It's only a scratch."
+
+griffonstone.7.t:0 "The Three Doors"
+griffonstone.7.d:0 "Setting off the following day, Gallus searches for any indication of either Arimaspi or the Idol down along the length of the Abyss. After an hour of searching, he is rewarded with an opening hewn out of the rock face. There are inscriptions chipped around the entrance that Gallus can't read, though he guesses that it's ancient Griffonian writing.\n\nHe enters the opening without hesitation, and he finds himself in a large chamber with three massive doors presented before him. While the middle one is mostly bland, the two on either sides have grandiose images incised upon them.\n\nGallus immediately recognizes the form of God Boreas on the left door, radiating light onto the sky. The menacing figure on the right door is more difficult to distinguish, but after some thought, Gallus guesses that it may be the minor god Maar.\n\nSomething tells Gallus that he may only choose one path."
+griffonstone.7.a:0 "Boreas, God of the Griffons and Skies, is clearly the right choice."
+griffonstone.7.b:0 "The side doors are distractions. Keep moving forward."
+griffonstone.7.c:0 "Arimapsi was a servant of Maar. Perhaps Maar has the idol?"
+
+griffonstone.8.t:0 "Trusting in Boreas"
+griffonstone.8.d:0 "Gallus was never really a religious Griffon, but there's something reassuring about the Boreas door. After some deliberation, he chooses to take the left door.\n\nThe stone slab door barely budges, but a minute of pushing later, Gallus walks on through.\n\nThe following corridor is long but well-lit by unknown means. Perhaps it is some form of natural light or some ancient enchantment. Either way, Gallus isn't sure, and trudges onwards."
+griffonstone.8.a:0 "The quest continues..."
+
+griffonstone.9.t:0 ""
+griffonstone.9.d:0 ""
+griffonstone.9.a:0 ""
+
+griffonstone.10.t:0 ""
+griffonstone.10.d:0 ""
+griffonstone.10.a:0 ""
+
+griffonstone.11.t:0 ""
+griffonstone.11.d:0 ""
+griffonstone.11.a:0 ""
+griffonstone.11.b:0 ""
+griffonstone.11.c:0 ""
+
+griffonstone.12.t:0 ""
+griffonstone.12.d:0 ""
+griffonstone.12.a:0 ""
+
+griffonstone.13.t:0 ""
+griffonstone.13.d:0 ""
+griffonstone.13.a:0 ""
+
+griffonstone.14.t:0 ""
+griffonstone.14.d:0 ""
+griffonstone.14.a:0 ""
+
+griffonstone.15.t:0 ""
+griffonstone.15.d:0 ""
+griffonstone.15.a:0 ""
+griffonstone.15.b:0 ""
+griffonstone.15.c:0 ""
+
+griffonstone.16.t:0 ""
+griffonstone.16.d:0 ""
+griffonstone.16.a:0 ""
+
+griffonstone.17.t:0 ""
+griffonstone.17.d:0 ""
+griffonstone.17.a:0 ""
+
+griffonstone.18.t:0 ""
+griffonstone.18.d:0 ""
+griffonstone.18.a:0 ""
+griffonstone.18.b:0 ""
+
+griffonstone.19.t:0 ""
+griffonstone.19.d:0 ""
+griffonstone.19.a:0 ""
+
+griffonstone.20.t:0 ""
+griffonstone.20.d:0 ""
+griffonstone.20.a:0 ""
 
 ###########################################
 ### COUNTRY STUFF #########################
