@@ -2,17 +2,42 @@
 ###########################################
 ### FOCUS LOCALISATION ####################
 ###########################################
-
+BOI_King_Gallus:0 "Chosen of Boreas"
+BOI_King_Gallus_desc:0 ""
+BOI_Restore_The_Rule_Of_Law:0 "Restore the Rule of Law"
+BOI_Restore_The_Rule_Of_Law_desc:0 ""
+BOI_Demand_Nobles_Bend:0 "Chastise Nobility"
+BOI_Demand_Nobles_Bend_desc:0 ""
+BOI_Seize_Silverstone:0 "Seize The Silverstone Mines"
+BOI_Seize_Silverstone_desc:0 ""
+BOI_Seize_Goldstone:0 "Seize The Goldstone Mines"
+BOI_Seize_Goldstone_desc:0 ""
+BOI_Redistribute_Land_To_Peasntry:0 "Redistribute Land to Peasantry"
+BOI_Redistribute_Land_To_Peasntry_desc:0 ""
+BOI_Offer_Sanctuary_To_The_Downtrodden:0 "Sanctuary from Chaos"
+BOI_Mountainpaths:0 "Mountain Roads"
+BOI_Mountainpaths_desc:0 ""
 ###########################################
 ### IDEAS #################################
 ###########################################
 
+idol_of_boreas_lost:0 "Idol of Boreas Lost"
+idol_of_boreas_Lost_desc:0 "Griffonstone was once a grand city of proud and united griffons thanks to the Idol of Boreas. But sometime during the reign of King Guto, a monster named Arimaspi attacked and stole the idol. The idol was eventually lost when Arimaspi fell into the Abysmal Abyss, and Griffonstone fell into a state of misery."
+kingdom_with_no_king:0 "Kingdom with no King"
+kingdom_with_no_king_desc:0 "Griffonstone has been without a ruler for centuries while the Imperial Family once considered our city their capital they fled to Griffonheim entrusting the city to a cadet branch which was extinquished when King Guto the 14th was slain."
+home_of_the_griffons:0 "Home of the Griffons"
+home_of_the_Griffons_desc:0 "Griffonstone is the ancestral birthplace of our species, where the first of our kin began to stalk the skys. As such Griffonstone is the most holiest place in all of Griffonia."
+seize_silverstone:0 "Wealth of the Rock"
+seize_silverstone_desc:0 "Griffonstone is not the largest, most populous, or most fertile part of Griffonia but we are the most mineral rich, the silver mines of Silverstone are once again open to the crown. Extravagance has its uses. We must demonstrate the power and wealth of Griffonstone for all the realm to see."
+seize_goldstone:0 "Wealth of the Rock"
+seize_goldstone_desc:0 "Griffonstone is not the largest, most populous, or most fertile part of Griffonia but we are the most mineral rich, the silver mines of Silverstone and gold mines of Goldstone are once again open to the crown. Extravagance has its uses. We must demonstrate the power and wealth of Griffonstone for all the realm to see."
+
 ###########################################
 ### EVENTS ################################
 ###########################################
-griffonstone.0.t:0 "Gallus Dies"
-griffonstone.0.d:0 "Birb waifu is ded"
-griffonstone.0.a:0 "Oh noes"
+griffonstone.0.t:0 "Cornered! Trapped! And forced to fight on..."
+griffonstone.0.d:0 "You fought on bravely, loved bravely, lived bravely, headstrong and courageous as Boreas destined Griffons to do so. However this is no place for the weak, or the foolhardy. \n\nYour blood soaks the soil, feeding the evil in this place. The final blow smashs into your helm and now... the darkness holds dominion – black as death.  "
+griffonstone.0.a:0 "Boreal one, hearest thou my voice, still?"
 
 griffonstone.1.t:0 "#TODO"
 griffonstone.1.d:0 "#TODO"

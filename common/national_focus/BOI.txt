@@ -30,7 +30,7 @@ focus_tree = {
 	focus = {
 		id = BOI_King_Gallus
 		icon = GFX_goal_generic_neutrality_focus
-		cost = 15.00
+		cost = 5.00
 		x = 5
 		y = 1
     	available = {
@@ -46,6 +46,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
+		remove_ideas = kingdom_with_no_king
 		}
 	}
 
@@ -67,6 +68,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
+		add_ideas = limited_conscription
 		create_wargoal = { type = annex_everything target = BAN }	}
 		}
 	focus = {
@@ -117,13 +119,23 @@ focus_tree = {
     	prerequisite = {
         	focus = BOI_King_Gallus
     	}
-
+    	available = {
+			389 = { is_owned_by = BOI }
+    	}
 		ai_will_do = {
 			factor = 100
 		}
 		available_if_capitulated = no
 
 		completion_reward = {
+		add_ideas = seize_silverstone
+		389 = {
+		add_building_construction = {
+		type = industrial_complex
+		level = 1
+		instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -136,13 +148,23 @@ focus_tree = {
     	prerequisite = {
         	focus = BOI_Seize_Silverstone
     	}
-
+    	available = {
+			389 = { is_owned_by = BOI }
+    	}
 		ai_will_do = {
 			factor = 100
 		}
 		available_if_capitulated = no
 
 		completion_reward = {
+		swap_ideas = { remove_idea = seize_silverstone add_idea = seize_goldstone }
+		389 = {
+		add_building_construction = {
+		type = industrial_complex
+		level = 1
+		instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -155,14 +177,87 @@ focus_tree = {
     	prerequisite = {
         	focus = BOI_King_Gallus
     	}
-
+    	available = {
+			384 = { is_owned_by = BOI }
+			679 = { is_owned_by = BOI }
+    	}
 		ai_will_do = {
 			factor = 100
 		}
 		available_if_capitulated = no
 
 		completion_reward = {
+		679 = {					
+		add_building_construction = {
+		type = arms_factory
+		level = 2
+		instant_build = yes
+				}
+			}
+		384 = {
+		add_building_construction = {
+		type = industrial_complex
+		level = 1
+		instant_build = yes
+				}
+			}
 		}
+	}
+	focus = {
+		id = BOI_Education_Effort
+		icon = GFX_goal_griffon_books
+		cost = 10.00
+		x = 2
+		y = 3
+        relative_position_id = BOI_King_Gallus
+    	prerequisite = {
+        	focus = BOI_Seize_Goldstone
+    	}
+    	prerequisite = {
+        	focus = BOI_Offer_Sanctuary_To_The_Downtrodden
+    	}
+    	available = {
+    	    BAN = { exists = no }
+			446 = { is_owned_by = BOI }
+			489 = { is_owned_by = BOI }
+			531 = { is_owned_by = BOI }
+			488 = { is_owned_by = BOI }
+			471 = { is_owned_by = BOI }
+			389 = { is_owned_by = BOI }
+			679 = { is_owned_by = BOI }
+    	}
+		ai_will_do = {
+			factor = 100
+		}
+		available_if_capitulated = no
+
+	completion_reward = {
+		add_political_power = 50
+		custom_effect_tooltip = GRI_education_tooltip
+	}
+	}
+	focus = {
+		id = BOI_Crush_Nobility
+		icon = GFX_goal_griffon_books
+		cost = 10.00
+		x = 2
+		y = 3
+        relative_position_id = BOI_King_Gallus
+    	prerequisite = {
+        	focus = BOI_Seize_Goldstone
+    	}
+    	prerequisite = {
+        	focus = BOI_Offer_Sanctuary_To_The_Downtrodden
+    	}
+		ai_will_do = {
+			factor = 100
+		}
+		available_if_capitulated = no
+
+	completion_reward = {
+		add_political_power = 50
+		custom_effect_tooltip = GRI_education_tooltip
+	}
 	}
 	focus = {
 		id = BOI_Redistribute_Land_To_Peasntry
@@ -177,62 +272,141 @@ focus_tree = {
     	prerequisite = {
         	focus = BOI_Restore_The_Rule_Of_Law
     	}
-		ai_will_do = {
-			factor = 100
-		}
-		available_if_capitulated = no
-
-		completion_reward = {
-		}
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	focus = {
-		id = BOI_Queen_Gilda
-		icon = GFX_goal_generic_neutrality_focus
-		cost = 10.00
-		x = 14
-		y = 1
-
-    	prerequisite = {
-        	focus = BOI_Griffonstone_Assembly
+    	available = {
+    	    BAN = { exists = no }
+			446 = { is_owned_by = BOI }
+			489 = { is_owned_by = BOI }
+			531 = { is_owned_by = BOI }
+			488 = { is_owned_by = BOI }
+			471 = { is_owned_by = BOI }
+			389 = { is_owned_by = BOI }
+			679 = { is_owned_by = BOI }
     	}
+		ai_will_do = {
+			factor = 100
+		}
+		available_if_capitulated = no
 
+	completion_reward = {
+	swap_ideas = { remove_idea = poverty add_idea = poverty1 }
+	}
+	}
+	focus = {
+		id = BOI_Mountainpaths
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10.00
+		x = -3
+		y = 2
+        relative_position_id = BOI_King_Gallus
+    	prerequisite = {
+        	focus = BOI_Demand_Nobles_Bend
+    	}
+    	prerequisite = {
+        	focus = BOI_Restore_The_Rule_Of_Law
+    	}
+    	available = {
+			488 = { is_owned_by = BOI }
+			531 = { is_owned_by = BOI }
+			471 = { is_owned_by = BOI }
+			389 = { is_owned_by = BOI }
+			446 = { is_owned_by = BOI }
+			606 = { is_owned_by = BOI }
+			489 = { is_owned_by = BOI }
+    	}
 		ai_will_do = {
 			factor = 100
 		}
 		available_if_capitulated = no
 
 		completion_reward = {
+			488 = {
+
+					add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+					}
+				}
+			531 = {
+
+					add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+					}
+				}
+			471 = {
+
+					add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+					}
+				}
+			389 = {
+
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+					}
+				}
+			446 = {
+
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+					}
+				}
+			606 = {
+
+					add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+					}
+				}
+			489 = {
+
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+					}
+				}
+			}
 		}
-	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	focus = {
-		id = BOI_King_Moore
+		id = BOI_The_Deadlock_Continues
 		icon = GFX_goal_generic_neutrality_focus
 		cost = 15.00
 		x = 22
 		y = 1
     	available = {
-        has_country_flag = KingMoore
+        has_country_flag = QuestFailed
     	}
     	prerequisite = {
         	focus = BOI_Griffonstone_Assembly

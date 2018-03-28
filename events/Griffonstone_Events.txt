@@ -10,11 +10,6 @@ country_event = { #Gallus Death
 
          option = {      
             name = griffonstone.0.a
-			set_country_flag = QueenGilda
-           }
-         option = {      
-            name = griffonstone.0.b
-			set_country_flag = KingMoore
            }
 }
 

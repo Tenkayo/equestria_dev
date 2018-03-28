@@ -3,26 +3,104 @@ ideas = {
 	country = {
 		idol_of_boreas_lost = {
 
+			allowed = {
+				always = no
+			}
+
 			modifier = {
-               				stability_factor = -0.3
-                				}
+            stability_factor = -0.3
+            }
+
+           	removal_cost = -1
+
 		}
-	}
-	country = {
+		idol_of_boreas_recovered = {
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+            stability_factor = 0.3
+			add_war_support = 0.15
+			army_morale_factor = 0.15
+            }
+
+           	removal_cost = -1
+
+           	picture = GFX_idea_idol_of_boreas_lost
+
+		}
 		kingdom_with_no_king = {
 
-			modifier = {
-               				stability_factor = -0.1
-               				political_power_gain = -0.05
-                				}
-		}
-	}
-	country = {
-		home_of_the_griffons = {
+			allowed = {
+				always = no
+			}
 
 			modifier = {
-               				stability_factor = 0.1
-                				}
+            stability_factor = -0.1
+            political_power_gain = -0.05
+            }
+
+           	removal_cost = -1
+
 		}
-	}
+		home_of_the_griffons = {
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+            stability_factor = 0.1
+            }
+
+			removal_cost = -1
+
+		}
+		seize_silverstone = {
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+			consumer_goods_factor = -0.05
+            }
+
+			removal_cost = -1
+
+			picture = generic_foreign_capital
+
+		}
+		seize_goldstone = {
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+			consumer_goods_factor = -0.12
+            }
+
+			removal_cost = -1
+
+			picture = generic_foreign_capital
+
+		}
+		rebelleous_nobility = {
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+            stability_factor = -0.05
+            }
+
+			removal_cost = -1
+
+			picture = ROM_king_carol_ii_handled
+			
+		}
 }
