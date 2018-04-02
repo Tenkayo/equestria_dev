@@ -28,13 +28,38 @@ focus_tree = {
 	}
 
 	focus = {
+		id = BOI_The_Deadlock_Continues
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 15.00
+		x = 22
+		y = 1
+    	available = {
+        has_country_flag = QuestFailed
+    	}
+    	prerequisite = {
+        	focus = BOI_Griffonstone_Assembly
+    	}
+    	mutually_exclusive = {
+        	focus = BOI_King_Gallus
+    	}
+		ai_will_do = {
+			factor = 100
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			load_focus_tree = generic_griffon_focus
+		}
+	}
+
+	focus = {
 		id = BOI_King_Gallus
 		icon = GFX_goal_generic_neutrality_focus
 		cost = 5.00
 		x = 5
 		y = 1
     	available = {
-        has_country_flag = KingGallus
+        has_country_flag = QuestSuccess
     	}
     	prerequisite = {
         	focus = BOI_Griffonstone_Assembly
@@ -86,13 +111,13 @@ focus_tree = {
     	}
     	available = {
     	    BAN = { exists = no }
-			446 = { is_owned_by = BOI }
-			489 = { is_owned_by = BOI }
-			531 = { is_owned_by = BOI }
-			488 = { is_owned_by = BOI }
-			471 = { is_owned_by = BOI }
-			389 = { is_owned_by = BOI }
-			679 = { is_owned_by = BOI }
+			446 = { is_owned_by = ROOT }
+			489 = { is_owned_by = ROOT }
+			531 = { is_owned_by = ROOT }
+			488 = { is_owned_by = ROOT }
+			471 = { is_owned_by = ROOT }
+			389 = { is_owned_by = ROOT }
+			679 = { is_owned_by = ROOT }
     	}
 		ai_will_do = {`
 			factor = 100
@@ -120,7 +145,7 @@ focus_tree = {
         	focus = BOI_King_Gallus
     	}
     	available = {
-			389 = { is_owned_by = BOI }
+			389 = { is_owned_by = ROOT }
     	}
 		ai_will_do = {
 			factor = 100
@@ -149,7 +174,7 @@ focus_tree = {
         	focus = BOI_Seize_Silverstone
     	}
     	available = {
-			389 = { is_owned_by = BOI }
+			389 = { is_owned_by = ROOT }
     	}
 		ai_will_do = {
 			factor = 100
@@ -178,8 +203,8 @@ focus_tree = {
         	focus = BOI_King_Gallus
     	}
     	available = {
-			384 = { is_owned_by = BOI }
-			679 = { is_owned_by = BOI }
+			384 = { is_owned_by = ROOT }
+			679 = { is_owned_by = ROOT }
     	}
 		ai_will_do = {
 			factor = 100
@@ -218,13 +243,13 @@ focus_tree = {
     	}
     	available = {
     	    BAN = { exists = no }
-			446 = { is_owned_by = BOI }
-			489 = { is_owned_by = BOI }
-			531 = { is_owned_by = BOI }
-			488 = { is_owned_by = BOI }
-			471 = { is_owned_by = BOI }
-			389 = { is_owned_by = BOI }
-			679 = { is_owned_by = BOI }
+			446 = { is_owned_by = ROOT }
+			489 = { is_owned_by = ROOT }
+			531 = { is_owned_by = ROOT }
+			488 = { is_owned_by = ROOT }
+			471 = { is_owned_by = ROOT }
+			389 = { is_owned_by = ROOT }
+			679 = { is_owned_by = ROOT }
     	}
 		ai_will_do = {
 			factor = 100
@@ -234,30 +259,7 @@ focus_tree = {
 	completion_reward = {
 		add_political_power = 50
 		custom_effect_tooltip = GRI_education_tooltip
-	}
-	}
-	focus = {
-		id = BOI_Crush_Nobility
-		icon = GFX_goal_griffon_books
-		cost = 10.00
-		x = 2
-		y = 3
-        relative_position_id = BOI_King_Gallus
-    	prerequisite = {
-        	focus = BOI_Seize_Goldstone
-    	}
-    	prerequisite = {
-        	focus = BOI_Offer_Sanctuary_To_The_Downtrodden
-    	}
-		ai_will_do = {
-			factor = 100
 		}
-		available_if_capitulated = no
-
-	completion_reward = {
-		add_political_power = 50
-		custom_effect_tooltip = GRI_education_tooltip
-	}
 	}
 	focus = {
 		id = BOI_Redistribute_Land_To_Peasntry
@@ -274,13 +276,13 @@ focus_tree = {
     	}
     	available = {
     	    BAN = { exists = no }
-			446 = { is_owned_by = BOI }
-			489 = { is_owned_by = BOI }
-			531 = { is_owned_by = BOI }
-			488 = { is_owned_by = BOI }
-			471 = { is_owned_by = BOI }
-			389 = { is_owned_by = BOI }
-			679 = { is_owned_by = BOI }
+			446 = { is_owned_by = ROOT }
+			489 = { is_owned_by = ROOT }
+			531 = { is_owned_by = ROOT }
+			488 = { is_owned_by = ROOT }
+			471 = { is_owned_by = ROOT }
+			389 = { is_owned_by = ROOT }
+			679 = { is_owned_by = ROOT }
     	}
 		ai_will_do = {
 			factor = 100
@@ -305,13 +307,13 @@ focus_tree = {
         	focus = BOI_Restore_The_Rule_Of_Law
     	}
     	available = {
-			488 = { is_owned_by = BOI }
-			531 = { is_owned_by = BOI }
-			471 = { is_owned_by = BOI }
-			389 = { is_owned_by = BOI }
-			446 = { is_owned_by = BOI }
-			606 = { is_owned_by = BOI }
-			489 = { is_owned_by = BOI }
+			488 = { is_owned_by = ROOT }
+			531 = { is_owned_by = ROOT }
+			471 = { is_owned_by = ROOT }
+			389 = { is_owned_by = ROOT }
+			446 = { is_owned_by = ROOT }
+			606 = { is_owned_by = ROOT }
+			489 = { is_owned_by = ROOT }
     	}
 		ai_will_do = {
 			factor = 100
@@ -377,48 +379,3 @@ focus_tree = {
 				}
 			}
 		}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	focus = {
-		id = BOI_The_Deadlock_Continues
-		icon = GFX_goal_generic_neutrality_focus
-		cost = 15.00
-		x = 22
-		y = 1
-    	available = {
-        has_country_flag = QuestFailed
-    	}
-    	prerequisite = {
-        	focus = BOI_Griffonstone_Assembly
-    	}
-    	mutually_exclusive = {
-        	focus = BOI_Queen_Gilda focus = BOI_King_Gallus
-    	}
-		ai_will_do = {
-			factor = 100
-		}
-		available_if_capitulated = no
-
-		completion_reward = {
-		}
-	}
