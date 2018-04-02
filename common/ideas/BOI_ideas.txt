@@ -1,5 +1,5 @@
 ideas = {
-
+	
 	country = {
 		idol_of_boreas_lost = {
 

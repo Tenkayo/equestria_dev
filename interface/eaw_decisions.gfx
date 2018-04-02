@@ -40,6 +40,11 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/EQS_militias_cat.dds"
 	}
 	spriteType = {
+		name = "GFX_decision_category_generic_magic"
+		texturefile = "gfx/interface/decisions/decision_category_generic_magic.dds"
+	}
+	
+	spriteType = {
 		name = "GFX_decision_category_hammer_and_horseshoe"
 		texturefile = "gfx/interface/decisions/hammer_and_horseshoe.dds"
 	}
@@ -116,5 +121,13 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_decision_war_plan_eqs"
 		texturefile = "gfx/interface/decisions/war_plan_eqs.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_sinister_cutiemark"
+		texturefile = "gfx/interface/decisions/sinister_cutiemark.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_vasily_cutiemark"
+		texturefile = "gfx/interface/decisions/vasily_cutiemark.dds"
 	}
 }

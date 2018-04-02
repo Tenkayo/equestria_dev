@@ -16,6 +16,7 @@ Features:
 ✢ Greifwald
 ✢ Brodfeld
 ✢ Holy Order
+✢ Nyumba ya Kaskazini
 
 Various choices, not enough griffon portraits and more land to conquer
 
@@ -25,13 +26,14 @@ Various choices, not enough griffon portraits and more land to conquer
 ✢ Solar Empire
 ✢ Celestial State
 ✢ Democratic path for Equestria
-✢ Harmonic Thorax's path
+✢ Harmonic Thorax's Changeling path
+✢ Rearranged Changeling focuses
 ✢ Lunar Empire focus tree improved
 ✢ Penguins
 ✢ Yakyakistan reworked
 ✢ Buffalo Chiefdom
 
-❈ Continental shape:
+❈ Changes to Equestrian continent:
 ✢ Numerous changes to coastline to make it fatter and more realistic
 ✢ Adjustments to Equestrian weather, now there are no temperature jumps
 ✢ More provinces in Equestria
@@ -40,7 +42,7 @@ Various choices, not enough griffon portraits and more land to conquer
 ✢ Adjustments to the river that flows near Whinnyapolis and Bales, more realistic trail
 ✢ Adjustments to jungles
 
-✦Added:
+✦Additions and fixes:
 ❈ Development Idea Tab
 ㅇScience Bases
 ❈ Various flavour and fun decisions:
@@ -55,9 +57,11 @@ Various choices, not enough griffon portraits and more land to conquer
 ✢ New focus icons
 ✢ More event pictures
 ✢ Buffalo Generals and Advisors
+✢ Better generic griffon generals
+✢ You can now marry Sakira in Sombra route
 ✢ Better russian localisation
 ✢ Vanilla tags removed from the game
-✢ Polising and miscellaneous improvements
+✢ Polishing and miscellaneous improvements
 
 [img]https://i.imgur.com/WeP8i7M.png[/img]
 0.6 “MAGIC”
