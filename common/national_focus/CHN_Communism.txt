@@ -1,0 +1,2273 @@
+focus_tree = {
+	id = CHN_Communism
+	country = {
+		factor = 0
+		modifier = {
+			add = 15
+			original_tag = CHN
+			has_government = communism
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 3 y = 2300 }
+
+	focus = {
+		id = CCC_Wartime_Communism
+		icon = GFX_focus_ger_great_red_menace
+		cost = 5.00
+		x = 8
+		y = 0
+		ai_will_do = { factor = 100 }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = CCC_Forced_Conscription
+		icon = GFX_goal_chn_red_changelings
+		cost = 5.00
+		prerequisite = { focus = CCC_Wartime_Communism }
+		relative_position_id = CCC_Wartime_Communism
+		x = -2
+		y = 1
+		ai_will_do = { factor = 110 }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = CCC_Fortress_Ditrysium
+		icon = GFX_goal_fortify_the_westwall
+		cost = 5.00
+		prerequisite = { focus = CCC_Wartime_Communism }
+		relative_position_id = CCC_Wartime_Communism
+		x = 2
+		y = 1
+		ai_will_do = { factor = 110 }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = CCC_Seize_The_Means_Of_Production
+		icon = GFX_goal_chn_communist_party
+		cost = 5.00
+		prerequisite = { focus = CCC_Wartime_Communism }
+		mutually_exclusive = {
+			#	focus = improve_economy
+		}
+		relative_position_id = CCC_Wartime_Communism
+		x = 0
+		y = 1
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.40
+				uses = 2
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_Red_Guard
+		icon = GFX_focus_generic_join_comintern
+		cost = 5.00
+		prerequisite = { focus = CCC_Fortress_Ditrysium focus = CCC_Forced_Conscription focus = CCC_Seize_The_Means_Of_Production }
+		relative_position_id = CCC_Wartime_Communism
+		x = 2
+		y = 2
+		ai_will_do = { factor = 95 }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = CCC_Panzers
+		icon = GFX_focus_indy_industrial_tanks
+		cost = 5.00
+		prerequisite = { focus = CCC_Fortress_Ditrysium focus = CCC_Forced_Conscription focus = CCC_Seize_The_Means_Of_Production }
+		relative_position_id = CCC_Wartime_Communism
+		x = -2
+		y = 2
+		ai_will_do = { factor = 90 }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = CCC_Renewed_Offensive
+		icon = GFX_focus_indy_swing_the_sword
+		cost = 5.00
+		prerequisite = { focus = CCC_Fortress_Ditrysium focus = CCC_Forced_Conscription focus = CCC_Seize_The_Means_Of_Production }
+		relative_position_id = CCC_Wartime_Communism
+		x = 0
+		y = 2
+		ai_will_do = { factor = 90 }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = CCC_A_Victory_For_The_Revolution
+		icon = GFX_focus_chi_whampoa_military_academy
+		cost = 20.00
+		prerequisite = { focus = CCC_Renewed_Offensive }
+		prerequisite = { focus = CCC_Panzers }
+		prerequisite = { focus = CCC_Red_Guard }
+		relative_position_id = CCC_Wartime_Communism
+		x = 0
+		y = 3
+		ai_will_do = { factor = 80 }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = CCC_Paramount_Cypher
+		icon = GFX_goal_chn_communist_party
+		cost = 10.00
+		prerequisite = { focus = CCC_A_Victory_For_The_Revolution }
+		mutually_exclusive = {
+			focus = CCC_Paramount_Vissoia
+		}
+		relative_position_id = CCC_Wartime_Communism
+		x = 2
+		y = 5
+		ai_will_do = { factor = 80 }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = CCC_Paramount_Vissoia
+		icon = GFX_goal_chn_communist_party
+		cost = 10.00
+		prerequisite = { focus = CCC_A_Victory_For_The_Revolution }
+		mutually_exclusive = {
+			focus = CCC_Paramount_Cypher
+		}
+		relative_position_id = CCC_Wartime_Communism
+		x = -2
+		y = 5
+		ai_will_do = { factor = 80 }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = CCC_V_Roads
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10.00
+		prerequisite = { focus = CCC_Paramount_Vissoia }
+		relative_position_id = CCC_Paramount_Vissoia
+		x = 0
+		y = 2
+		ai_will_do = { factor = 80 }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = CCC_V_Arsenal
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = { focus = CCC_V_Roads }
+		relative_position_id = CCC_Paramount_Vissoia
+		x = 1
+		y = 3
+		ai_will_do = { factor = 80 }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = CCC_V_Anglostratta_Factories
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10.00
+		prerequisite = { focus = CCC_V_Roads }
+		relative_position_id = CCC_Paramount_Vissoia
+		x = -1
+		y = 3
+		ai_will_do = { factor = 80 }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = CCC_V_Whitehoove_Mountains
+		icon = GFX_goal_generic_construction
+		cost = 10.00
+		prerequisite = { focus = CCC_V_Arsenal }
+		prerequisite = { focus = CCC_V_Anglostratta_Factories }
+		relative_position_id = CCC_Paramount_Vissoia
+		x = 0
+		y = 4
+		ai_will_do = { factor = 80 }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = CCC_V_Science
+		icon = GFX_goal_chn_research_com
+		prerequisite = { focus = CCC_V_Whitehoove_Mountains }
+		relative_position_id = CCC_Paramount_Vissoia
+		x = 0
+		y = 5
+		cost = 10.00
+		ai_will_do = { factor = 100 }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = CCC_V_Commissariat
+		icon = GFX_goal_secret_agents
+		cost = 10.00
+		prerequisite = { focus = CCC_Paramount_Vissoia }
+		relative_position_id = CCC_Paramount_Vissoia
+		x = -2
+		y = 2
+		ai_will_do = { factor = 80 }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = CCC_V_Purge_Enemies_Of_Revolution
+		icon = GFX_goal_purge_opposition
+		cost = 10.00
+		prerequisite = { focus = CCC_Paramount_Vissoia }
+		relative_position_id = CCC_Paramount_Vissoia
+		x = -4
+		y = 2
+		ai_will_do = { factor = 80 }
+		completion_reward = {
+			251 = { add_manpower = -5000 }
+		}
+	}
+
+	focus = {
+		id = CCC_Hunt_Down_Trimmel
+		icon = GFX_goal_kill_trimmel
+		cost = 15.00
+		prerequisite = { focus = CCC_Paramount_Vissoia focus = CCC_Paramount_Cypher }
+		relative_position_id = CCC_Wartime_Communism
+		x = 0
+		y = 6
+		ai_will_do = { factor = 80 }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = CCC_V_Red_Tzar
+		icon = GFX_focus_generic_soviet_politics
+		cost = 10.00
+		prerequisite = { focus = CCC_V_Purge_Enemies_Of_Revolution }
+		prerequisite = { focus = CCC_V_Commissariat }
+		relative_position_id = CCC_Paramount_Vissoia
+		x = -3
+		y = 3
+		ai_will_do = { factor = 80 }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = CCC_V_Key_Lake_Incident
+		icon = GFX_focus_generic_provoke_border_clashes
+		cost = 5.00
+		prerequisite = { focus = CCC_V_Red_Tzar }
+		relative_position_id = CCC_Paramount_Vissoia
+		will_lead_to_war_with = PLB
+		x = -4
+		y = 4
+		ai_will_do = { factor = 100 }
+		completion_reward = {
+		create_wargoal = { type = annex_everything target = PLB }
+		}
+	}
+
+	focus = {
+		id = CCC_V_Bear_Roads
+		icon = GFX_goal_forced_inf
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_V_Key_Lake_Incident
+		}
+		relative_position_id = CCC_Paramount_Vissoia
+		x = -4
+		y = 5
+		available = {
+			289 = { is_controlled_by = ROOT }
+			263 = { is_controlled_by = ROOT }
+			290 = { is_controlled_by = ROOT }
+		}
+		completion_reward = {
+			289 = {
+
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			263 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			290 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				290 = { add_manpower = -750000 }
+				289 = { add_manpower = -100000 } 
+				263 = { add_manpower = -10000 }
+		}
+	}
+
+	focus = {
+		id = CCC_V_Bear_Minerals
+		icon = GFX_goal_construction_engineering
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_V_Key_Lake_Incident
+		}
+		relative_position_id = CCC_Paramount_Vissoia
+		x = -6
+		y = 5
+		available = {
+			280 = { is_controlled_by = ROOT }
+			272 = { is_controlled_by = ROOT }
+			265 = { is_controlled_by = ROOT }
+			62 = { is_controlled_by = ROOT }
+		}
+		completion_reward = {
+			280 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+				}
+			add_resource = {
+				type = steel
+				amount = 12
+				state = 280
+			}
+			265 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			add_resource = {
+				type = chromium
+				amount = 8
+				state = 265
+			}
+				280 = { add_manpower = 200000 } 
+				272 = { add_manpower = -750000 }
+				265 = { add_manpower = -500000 } 
+				62 = { add_manpower = -10000 }
+		}
+	}
+
+	focus = {
+		id = CCC_V_Bear_Colonies
+		icon = GFX_goal_chn_changeling_com
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_V_Bear_Minerals
+		}
+		prerequisite = {
+			focus = CCC_V_Bear_Roads
+		}
+		relative_position_id = CCC_Paramount_Vissoia
+		x = -5
+		y = 6
+		available = {
+			280 = { is_controlled_by = ROOT }
+			272 = { is_controlled_by = ROOT }
+			265 = { is_controlled_by = ROOT }
+			62 = { is_controlled_by = ROOT }
+			289 = { is_controlled_by = ROOT }
+			263 = { is_controlled_by = ROOT }
+			290 = { is_controlled_by = ROOT }
+		}
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = CCC_V_pressure_olenia
+		icon = GFX_goal_chn_kill_the_deer
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_V_Red_Tzar
+		}
+		available = {
+			has_government = communism
+		}
+		ai_will_do = { factor = 85 }
+		relative_position_id = CCC_Paramount_Vissoia
+		x = -2
+		y = 4
+		bypass = {
+			any_country = {
+				original_tag = OLE
+				OR = {
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+		completion_reward = {
+			add_war_support = 0.2
+			add_state_claim = 300
+			add_state_claim = 292
+			country_event = { id = changelings.1 days = 1 }
+			307 = { add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					} }
+			291 = { add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+					} }
+			add_named_threat = { threat = 10 name = pressure_olenia }
+		}
+	}
+
+	focus = {
+		id = CCC_V_conquest
+		icon = GFX_goal_chn_conquest_of_olenia
+		cost = 10.00
+		will_lead_to_war_with = OLE
+		prerequisite = {
+			focus = CCC_V_pressure_olenia
+		}
+		available = {
+			OLE = {
+				exists = yes
+				NOT = {
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+					has_non_aggression_pact_with = ROOT
+				}
+			}
+			has_government = communism
+		}
+		ai_will_do = { factor = 85 }
+		bypass = { OLE = { OR = { exists = no has_war_with = ROOT } } }
+		completion_reward = {
+			#hidden_effect = {
+				every_country = {
+					limit = { original_tag = OLE }
+					ROOT = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+						}
+					}
+				}
+				#}
+		}
+		relative_position_id = CCC_Paramount_Vissoia
+		x = -2
+		y = 5
+	}
+
+	focus = {
+		id = CCC_V_olenian_factories
+		icon = GFX_goal_forced_inf
+		cost = 10.00
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = {
+			focus = CCC_V_conquest
+		}
+		available = {
+			owns_state = 297
+			owns_state = 298
+			owns_state = 192
+		}
+		relative_position_id = CCC_Paramount_Vissoia
+		x = -3
+		y = 6
+		completion_reward = {
+			297 = { add_manpower = -100000 }
+			298 = { add_manpower = -200000 }
+			192 = { add_manpower = -200000 }
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_V_dig_deep
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+			focus = CCC_V_conquest
+		}
+		available = {
+			owns_state = 300
+			owns_state = 292
+			owns_state = 293
+			owns_state = 214
+			owns_state = 195
+			owns_state = 194
+			owns_state = 69
+			owns_state = 191
+			owns_state = 76
+		}
+		relative_position_id = CCC_Paramount_Vissoia
+		x = -1
+		y = 6
+		cost = 10.00
+		ai_will_do = {
+			factor = 50
+		}
+		completion_reward = {
+			add_resource = {
+				type = steel
+				amount = 16
+				state = 300
+			}
+			300 = { add_manpower = 50000 }
+			add_resource = {
+				type = steel
+				amount = 24
+				state = 292
+			}
+			292 = { add_manpower = 100000 }
+			add_resource = {
+				type = crystals
+				amount = 23
+				state = 293
+			}
+			293 = { add_manpower = 50000 }
+			add_resource = {
+				type = steel
+				amount = 16
+				state = 214
+			}
+			214 = { add_manpower = 50000 }
+			add_resource = {
+				type = chromium
+				amount = 20
+				state = 195
+			}
+			195 = { add_manpower = 100000 }
+			
+			194 = { add_manpower = -100000 }
+			69 = { add_manpower = -200000 }
+			191 = { add_manpower = -200000 }
+			76 = { add_manpower = -200000 }
+		}
+	}
+	focus = {
+		id = CCC_V_dig_for_oil
+		icon = GFX_goal_generic_oil_refinery
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_V_dig_deep
+		}
+		relative_position_id = CCC_Paramount_Vissoia
+		x = -1
+		y = 7
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			297 = { add_manpower = -200000 }
+			299 = { add_manpower = -100000 }
+			298 = { add_manpower = -100000 }
+			add_resource = {
+				type = oil
+				amount = 16
+				state = 297
+			}
+			add_resource = {
+				type = oil
+				amount = 14
+				state = 299
+			}
+			add_resource = {
+				type = oil
+				amount = 15
+				state = 298
+			}
+		}
+	}
+	focus = {
+		id = CCC_V_industrial_wealth
+		icon = GFX_goal_generic_secret_weapon
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_V_olenian_factories
+		}
+		relative_position_id = CCC_Paramount_Vissoia
+		x = -3
+		y = 7
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			69 = { add_manpower = -300000 }
+			191 = { add_manpower = -300000 }
+			76 = { add_manpower = -300000 }
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CCC_V_Olenian_Colonies
+		icon = GFX_goal_chn_changeling
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_V_industrial_wealth
+		}
+		prerequisite = {
+			focus = CCC_V_dig_for_oil
+		}
+		relative_position_id = CCC_Paramount_Vissoia
+		x = -2
+		y = 8
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = CTN_colonies
+		}
+	}
+	focus = {
+		id = CCC_V_natural_desolation
+		icon = GFX_focus_AST_squander_bug
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_V_Olenian_Colonies
+		}
+		relative_position_id = CCC_Paramount_Vissoia
+		x = -1
+		y = 9
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = CTN_desolation
+			76 = { add_manpower = -300000 }
+			191 = { add_manpower = -200000 }
+			194 = { add_manpower = -150000 }
+		}
+	}
+
+	focus = {
+		id = CCC_V_DeOlenification
+		icon = GFX_focus_CZE_german_puppet
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_V_Olenian_Colonies
+		}
+		relative_position_id = CCC_Paramount_Vissoia
+		x = -3
+		y = 9
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = CTN_deer_slavery
+			69 = { add_manpower = -200000 }
+			192 = { add_manpower = -100000 }
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CCC_V_the_state_of_olenia
+		icon = GFX_goal_chn_conquest_of_olenia
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_V_DeOlenification
+		}
+		prerequisite = {
+			focus = CCC_V_natural_desolation
+		}
+		relative_position_id = CCC_Paramount_Vissoia
+		x = -2
+		y = 10
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_political_power = -200
+			custom_effect_tooltip = CTN_olenian_cores
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_core_of = OLE
+					}
+					add_core_of = ROOT
+				}
+			}
+		}
+	}
+
+
+
+	focus = {
+		id = CCC_prepare_war
+		icon = GFX_goal_chn_fortify
+		cost = 10.00
+		prerequisite = {
+			focus = CTN_invason
+		}
+		x = 1
+		y = 3
+		relative_position_id = CTN_prepare_invasion
+		available = {
+			has_government = fascism
+			OLE = {
+				OR = {
+					exists = no
+					is_subject_of = ROOT
+					has_war_with = ROOT
+				}
+			}
+		}
+		bypass = {
+			EQS = {
+				OR = {
+					exists = no
+					is_subject_of = ROOT
+					has_war_with = ROOT
+				}
+			}
+		}
+		ai_will_do = { factor = 100 }
+		completion_reward = {
+			hidden_effect = {
+				news_event = { days = 2 id = news.17 }
+			}
+			251 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			246 = {
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = yes
+				}
+			}
+			319 = {
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = yes
+				}
+			}
+			add_named_threat = { threat = 15 name = prepare_for_war }
+		}
+	}
+
+	##############MILITARY FOCUS TREES################
+
+	focus = {
+		id = CCC_war_academy
+		icon = GFX_focus_generic_military_mission
+		cost = 10.00
+		x = 27
+		y = 0
+		ai_will_do = { factor = 95 }
+		completion_reward = {
+			add_ideas = changeling_school_of_war
+		}
+
+	}
+
+
+	######AIRFORCE FOCUSES########
+
+	focus = {
+		id = CCC_Air_Force
+		icon = GFX_goal_generic_build_airforce
+		cost = 10.00
+		prerequisite = { focus = CCC_war_academy }
+		x = 27
+		y = 2
+
+		ai_will_do = { factor = 30 }
+
+		completion_reward = {
+			air_experience = 25
+		}
+	}
+
+	focus = {
+		id = CCC_Paratroopers
+		icon = GFX_focus_generic_paratrooper
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_Air_Doctrine_1 focus = CCC_Air_Doctrine_2
+		}
+
+		x = 0
+		y = 2
+		relative_position_id = CCC_Air_Force
+		ai_will_do = { factor = 30 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				ahead_reduction = 1
+				category = para_tech
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_Fighter_1
+		icon = GFX_goal_generic_air_fighter
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_Air_Doctrine_1 focus = CCC_Air_Doctrine_2
+		}
+
+		x = 2
+		y = 2
+		relative_position_id = CCC_Air_Force
+		ai_will_do = { factor = 30 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name =  fighter_bonus
+				bonus = 0.5
+				uses = 2
+				category = light_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_Fighter_2
+		icon = GFX_goal_generic_air_fighter2
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_Air_Doctrine_1 focus = CCC_Air_Doctrine_2
+		}
+
+		x = 4
+		y = 2
+		relative_position_id = CCC_Air_Force
+		ai_will_do = { factor = 30 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name =  fighter_bonus
+				bonus = 0.25
+				uses = 1
+				category = light_fighter
+				ahead_reduction = 1
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_Fighter_3
+		icon = GFX_goal_generic_air_bomber
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_Fighter_1 focus = CCC_Fighter_2
+		}
+
+		x = 3
+		y = 3
+		relative_position_id = CCC_Air_Force
+		ai_will_do = { factor = 30 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name =  fighter_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_heavy_fighter
+			}
+		}
+	}
+	focus = {
+		id = CCC_Bomber_1
+		icon = GFX_goal_poland_goal
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_Air_Doctrine_1 focus = CCC_Air_Doctrine_2
+		}
+
+		x = -2
+		y = 2
+		relative_position_id = CCC_Air_Force
+		ai_will_do = { factor = 30 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name =  tactical_bombers
+				bonus = 0.5
+				uses = 2
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_Bomber_2
+		icon = GFX_goal_generic_occupy_start_war
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_Air_Doctrine_1 focus = CCC_Air_Doctrine_2
+		}
+
+		x = -4
+		y = 2
+		relative_position_id = CCC_Air_Force
+		ai_will_do = { factor = 30 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = CAS_bonus
+				bonus = 0.5
+				uses = 2
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_Bomber_3
+		icon = GFX_goal_generic_air_bomber
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_Bomber_2 focus = CCC_Bomber_1
+		}
+
+		x = -3
+		y = 3
+		relative_position_id = CCC_Air_Force
+		ai_will_do = { factor = 30 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name =  bomber_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_strategic_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_Air_Doctrine_1
+		icon = GFX_goal_generic_air_doctrine
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_Air_Force
+		}
+		mutually_exclusive = { focus = CCC_Air_Doctrine_2 }
+
+		x = -1
+		y = 1
+		relative_position_id = CCC_Air_Force
+		ai_will_do = { factor = 30 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = strategic_destruction_tree
+			}
+		}
+	}
+	focus = {
+		id = CCC_Air_Doctrine_2
+		icon = GFX_goal_generic_air_doctrine
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_Air_Force
+		}
+		mutually_exclusive = { focus = CCC_Air_Doctrine_1 }
+
+		x = 1
+		y = 1
+		relative_position_id = CCC_Air_Force
+		ai_will_do = { factor = 30 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = operational_integrity_tree
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_Swarms_In_The_Sky
+		icon = GFX_goal_chn_swarms_in_the_sky
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_Air_Doctrine_2
+		}
+		prerequisite = {
+			focus = CCC_Fighter_3
+		}
+		mutually_exclusive = { focus = CCN_Bomber_Command }
+		x = 1
+		y = 4
+		relative_position_id = CCC_Air_Force
+		ai_will_do = { factor = 40 }
+
+		completion_reward = {
+			add_ideas = CCN_Swarms_In_The_Sky
+		}
+	}
+
+	focus = {
+		id = CCC_Bomber_Command
+		icon = GFX_goal_chn_bomber_command
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_Air_Doctrine_1
+		}
+		prerequisite = {
+			focus = CCC_Bomber_3
+		}
+		mutually_exclusive = { focus = CCN_Swarms_In_The_Sky }
+		x = -1
+		y = 4
+		relative_position_id = CCC_Air_Force
+		ai_will_do = { factor = 30 }
+
+		completion_reward = {
+			add_ideas = CCN_Bomber_Command_Idea
+		}
+	}
+
+	focus = {
+		id = CCC_Rocketry
+		icon = GFX_focus_rocketry
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_Bomber_Command focus = CCC_Swarms_In_The_Sky
+		}
+		x = 0
+		y = 5
+		relative_position_id = CCC_Air_Force
+		ai_will_do = { factor = 25 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				ahead_reduction = 1
+				category = rocketry
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_Rocketry_Phase_Two
+		icon = GFX_focus_rocketry
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_Rocketry
+		}
+		x = -1
+		y = 6
+		relative_position_id = CCC_Air_Force
+		ai_will_do = { factor = 25 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				category = rocketry
+			}
+		}
+	}
+
+
+	focus = {
+		id = CCC_Wunderwaffe
+		icon = GFX_goal_chn_atomic_research
+		cost = 10.00
+		prerequisite = {
+			focus = CCC_Rocketry
+		}
+		x = 1
+		y = 6
+		relative_position_id = CCC_Air_Force
+		ai_will_do = { factor = 25 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				technology = atomic_research
+				technology = nuclear_reactor
+			}
+
+		}
+	}
+
+	focus = {
+		id = CCC_Jets
+		icon = GFX_focus_rocketry
+		cost = 20.00
+		prerequisite = {
+			focus = CCC_Rocketry_Phase_Two
+		}
+		prerequisite = {
+			focus = CCC_Wunderwaffe
+		}
+		x = 0
+		y = 7
+		relative_position_id = CCC_Air_Force
+		ai_will_do = { factor = 25 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				technology = jet_engines
+				ahead_reduction = 1
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_Jet_Fighter
+		icon = GFX_focus_rocketry
+		cost = 20.00
+		prerequisite = {
+			focus = CCC_Jets
+		}
+		x = -2
+		y = 8
+		relative_position_id = CCC_Air_Force
+		ai_will_do = { factor = 25 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				technology = jet_fighter1
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_Jet_Tactical_Bomber
+		icon = GFX_focus_rocketry
+		cost = 20.00
+		prerequisite = {
+			focus = CCC_Jets
+		}
+		x = 0
+		y = 8
+		relative_position_id = CCC_Air_Force
+		ai_will_do = { factor = 25 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				technology = jet_tactical_bomber1
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_Jet_Strategic_Bomber
+		icon = GFX_focus_rocketry
+		cost = 20.00
+		prerequisite = {
+			focus = CCC_Jets
+		}
+		x = 2
+		y = 8
+		relative_position_id = CCC_Air_Force
+		ai_will_do = { factor = 25 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				technology = jet_strategic_bomber1
+			}
+		}
+	}
+
+	#############ARMY FOCUSES############
+
+	focus = {
+		id = CCC_Army
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 10.00
+		prerequisite = { focus = CCC_war_academy }
+
+		x = 17
+		y = 2`
+		ai_will_do = { factor = 90 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.25
+				uses = 1
+				category = land_doctrine
+			}
+
+			army_experience = 25
+		}
+	}
+
+	focus = {
+		id = CCC_Infantry_1
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = CCC_Army }
+		relative_position_id = CCC_Army
+		x = 2
+		y = 1
+		cost = 10
+		ai_will_do = { factor = 90 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_research
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				name = arty_bonus
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+			add_tech_bonus = {
+				name = support_bonus
+				bonus = 0.33
+				uses = 1
+				category = support_tech
+			}
+		}
+	}
+	focus = {
+		id = CCC_Jager_1
+		icon = GFX_goal_chn_changeling
+		prerequisite = { focus = CCC_Infantry_1 focus = CCC_Infantry_2 }
+		relative_position_id = CCC_Army
+		x = 3
+		y = 2
+		cost = 10
+		ai_will_do = { factor = 40 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = jager_tech
+			}
+		}
+	}
+	focus = {
+		id = CCC_Magical_Infantry
+		icon = GFX_goal_chn_horn
+		prerequisite = { focus = CCC_Infantry_1 focus = CCC_Infantry_2 }
+		relative_position_id = CCC_Army
+		x = -3
+		y = 2
+		cost = 10
+		ai_will_do = { factor = 40 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.5
+				uses = 2
+				technology = magical_weapons
+				technology = magical_weapons1
+				technology = magical_weapons2
+				technology = magical_weapons3
+			}
+		}
+	}
+	focus = {
+		id = CCC_Infiltrators
+		icon = GFX_goal_chn_spy
+		prerequisite = { focus = CCC_Blitzkrieg_1 focus = CCC_Motorized_1 focus = CCC_Magical_Infantry }
+		relative_position_id = CCC_Army
+		x = -3
+		y = 3
+		cost = 10
+		ai_will_do = { factor = 40 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = infiltrator_tech
+			}
+		}
+	}
+	focus = {
+		id = CCC_Motorized_1
+		icon = GFX_goal_chn_truck
+		prerequisite = { focus = CCC_Infantry_1 focus = CCC_Infantry_2 }
+		relative_position_id = CCC_Army
+		x = 1
+		y = 2
+		cost = 10
+		ai_will_do = { factor = 30 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_research
+				bonus = 0.5
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+	focus = {
+		id = CCC_Motorized_2
+		icon = GFX_goal_chn_truck
+		prerequisite = { focus = CCC_Motorized_1 }
+		relative_position_id = CCC_Army
+		x = 3
+		y = 3
+		cost = 10
+		ai_will_do = { factor = 40 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = mech_army_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_mechanized_equipment
+				ahead_reduction = 1
+
+			}
+		}
+	}
+	focus = {
+		id = CCC_Support_Companies_1
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = CCC_Blitzkrieg_1 focus = CCC_Motorized_1 }
+		relative_position_id = CCC_Army
+		x = 1
+		y = 3
+		cost = 10
+		ai_will_do = { factor = 40 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = support_tech
+				ahead_reduction = 1
+
+			}
+		}
+	}
+	focus = {
+		id = CCC_Blitzkrieg_1
+		icon = GFX_goal_chn_panzer_iii
+		prerequisite = { focus = CCC_Infantry_1 focus = CCC_Infantry_2 }
+		relative_position_id = CCC_Army
+		x = -1
+		y = 2
+		cost = 10
+		ai_will_do = { factor = 90 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_mobile_warfare
+			}
+			add_tech_bonus = {
+				name = tank_research
+				bonus = 0.5
+				uses = 1
+				category = cat_light_armor
+			}
+			add_tech_bonus = {
+				name = tank_research
+				bonus = 0.5
+				uses = 1
+				category = cat_medium_armor
+			}
+		}
+	}
+	focus = {
+		id = CCC_Blitzkrieg_2
+		icon = GFX_goal_chn_panzer_iii
+		prerequisite = { focus = CCC_Blitzkrieg_1 }
+		relative_position_id = CCC_Army
+		x = -1
+		y = 3
+		cost = 10
+		ai_will_do = { factor = 90 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = tank_research
+				bonus = 0.5
+				uses = 2
+				category = cat_light_armor
+				ahead_reduction = 1
+			}
+			add_tech_bonus = {
+				name = tank_research
+				bonus = 0.5
+				uses = 1
+				category = cat_medium_armor
+			}
+			add_tech_bonus = {
+				name = tank_research
+				bonus = 0.5
+				uses = 1
+				category = cat_heavy_armor
+			}
+		}
+	}
+	focus = {
+		id = CCC_Infantry_2
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = CCC_Army }
+		relative_position_id = CCC_Army
+		x = -2
+		y = 1
+		cost = 10
+		ai_will_do = { factor = 40 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_research
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				name = arty_bonus
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+	focus = {
+		id = CCC_Chemical_Weapons
+		icon = GFX_goal_ccn_chemical_weapons
+		prerequisite = { focus = CCC_Army }
+		relative_position_id = CCC_Army
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = { factor = 100 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = CCN_chemical_Weapons_Idea
+		}
+	}
+	focus = {
+		id = CCC_Dedicated_Panzer_Production
+		icon = GFX_goal_chn_panzer_iii
+		cost = 10.00
+		mutually_exclusive = { focus = CCC_Dedicated_Motorized_Production focus = CCC_Infantry_Academy }
+		prerequisite = {
+			focus = CCC_Blitzkrieg_2
+		}
+		prerequisite = {
+			focus = CCC_Motorized_2
+		}
+		prerequisite = {
+			focus = CCC_Support_Companies_1
+		}
+		relative_position_id = CCC_Army
+		x = -2
+		y = 4
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			add_ideas = CNN_Vreod
+		}
+	}
+	focus = {
+		id = CCC_Dedicated_Motorized_Production
+		icon = GFX_goal_chn_truck
+		cost = 10.00
+		mutually_exclusive = { focus = CCC_Dedicated_Panzer_Production focus = CCC_Infantry_Academy }
+		prerequisite = {
+			focus = CCC_Blitzkrieg_2
+		}
+		prerequisite = {
+			focus = CCC_Motorized_2
+		}
+		prerequisite = {
+			focus = CCC_Support_Companies_1
+		}
+		relative_position_id = CCC_Army
+		x = 0
+		y = 4
+		ai_will_do = { factor = 0 }
+
+		completion_reward = {
+			add_ideas = CNN_Mobile_Infantry_Taskforce
+		}
+	}
+	focus = {
+		id = CCC_Infantry_Academy
+		icon = GFX_goal_chn_lead_the_army
+		cost = 10.00
+		mutually_exclusive = { focus = CCC_Dedicated_Panzer_Production focus = CCC_Dedicated_Motorized_Production }
+		prerequisite = {
+			focus = CCC_Blitzkrieg_2
+		}
+		prerequisite = {
+			focus = CCC_Motorized_2
+		}
+		prerequisite = {
+			focus = CCC_Support_Companies_1
+		}
+		relative_position_id = CCC_Army
+		x = 2
+		y = 4
+		ai_will_do = { factor = 0 }
+
+		completion_reward = {
+			add_ideas = CCN_EggIceLand_Infantry_Academy
+		}
+	}
+
+	####################NAVAL STUFF####################
+
+
+	focus = {
+		id = CCC_navylysander
+		icon = GFX_goal_generic_navy_battleship
+		cost = 10
+		x = 37
+		y = 2
+		prerequisite = { focus = CCC_war_academy }
+		mutually_exclusive = {
+			focus = CCC_navymimic
+		}
+		ai_will_do = { factor = 20 }
+		completion_reward = {
+			navy_experience = 25
+			add_ideas = lysander
+		}
+	}
+	focus = {
+		id = CCC_navymimic
+		icon = GFX_goal_generic_wolf_pack
+		cost = 10
+		x = 39
+		y = 2
+		prerequisite = { focus = CCC_war_academy }
+		mutually_exclusive = {
+			focus = CCC_navylysander
+		}
+		ai_will_do = { factor = 0 }
+		completion_reward = {
+			navy_experience = 25
+			add_ideas = mimic
+		}
+	}
+
+	focus = {
+		id = CCC_carrier_navy
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = CCC_navymimic focus = CCC_navylysander }
+		mutually_exclusive = { focus = CCC_battleship_navy }
+
+		available_if_capitulated = yes
+
+		x = 36
+		y = 3
+
+		cost = 10
+		ai_will_do = { factor = 0 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 10
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				category = cat_base_strike
+			}
+			set_technology = { basic_carrier = 1 }
+		}
+	}
+
+	focus = {
+		id = CCC_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = CCC_carrier_navy focus = CCC_battleship_navy }
+
+		available_if_capitulated = yes
+
+		x = 34
+		y = 4
+
+		cost = 10
+		ai_will_do = { factor = 10 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = submarine_research
+				bonus = 0.5
+				uses = 2
+				category = ss_tech
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_Naval_Bomber
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = CCC_carrier_navy }
+
+		available_if_capitulated = yes
+
+		x = 36
+		y = 4
+
+		cost = 10
+		ai_will_do = { factor = 10 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = naval_bomber_research
+				bonus = 0.5
+				uses = 2
+				category = naval_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_Marine_Operations
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = CCC_carrier_navy focus = CCC_battleship_navy }
+
+		available_if_capitulated = yes
+
+		x = 42
+		y = 4
+
+		cost = 10
+		ai_will_do = { factor = 10 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 10
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = tp_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				category = marine_tech
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_Navy_Doctrine
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = CCC_carrier_navy focus = CCC_battleship_navy }
+
+		available_if_capitulated = yes
+
+		x = 38
+		y = 4
+
+		cost = 10
+		ai_will_do = { factor = 10 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = naval_doctrine_bonus
+				bonus = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_battleship_navy
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = CCC_navymimic focus = CCC_navylysander }
+		mutually_exclusive = { focus = CCC_carrier_navy }
+
+		available_if_capitulated = yes
+
+		x = 40
+		y = 3
+
+		cost = 10
+		ai_will_do = { factor = 20 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 10
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				category = cat_fleet_in_being
+			}
+			set_technology = { heavy_battleship = 1 }
+		}
+	}
+
+	focus = {
+		id = CCC_Destroyers
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = CCC_Navy_Doctrine }
+
+		available_if_capitulated = yes
+
+		x = 38
+		y = 5
+
+		cost = 10
+		ai_will_do = { factor = 10 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = naval_doctrine_bonus
+				bonus = 0.5
+				uses = 2
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_Light_Cruisers
+		icon = GFX_focus_generic_cruiser2
+		prerequisite = { focus = CCC_Destroyers }
+
+		available_if_capitulated = yes
+
+		x = 38
+		y = 6
+
+		cost = 10
+		ai_will_do = { factor = 10 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = naval_doctrine_bonus
+				bonus = 0.5
+				uses = 2
+				category = cl_tech
+			}
+		}
+	}
+	focus = {
+		id = CCC_Heavy_Cruisers
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = CCC_battleship_navy }
+
+		available_if_capitulated = yes
+
+		x = 40
+		y = 4
+
+		cost = 10
+		ai_will_do = { factor = 10 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = naval_doctrine_bonus
+				bonus = 0.5
+				uses = 2
+				category = ca_tech
+			}
+		}
+	}
+	focus = {
+		id = CCC_Battlecruisers
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = CCC_Heavy_Cruisers }
+
+		available_if_capitulated = yes
+
+		x = 40
+		y = 5
+
+		cost = 10
+		ai_will_do = { factor = 10 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = naval_doctrine_bonus
+				bonus = 0.5
+				uses = 2
+				category = bc_tech
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_Battleships
+		icon = GFX_focus_generic_navy_battleship2
+		prerequisite = { focus = CCC_Battlecruisers }
+
+		available_if_capitulated = yes
+
+		x = 40
+		y = 6
+
+		cost = 10
+		ai_will_do = { factor = 10 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = naval_doctrine_bonus
+				bonus = 0.5
+				uses = 2
+				category = bb_tech
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_Escort_Carriers
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = CCC_Naval_Bomber }
+
+		available_if_capitulated = yes
+
+		x = 36
+		y = 5
+
+		cost = 10
+		ai_will_do = { factor = 10 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = carrier_research
+				bonus = 0.25
+				uses = 2
+				technology = escort_carrier
+				technology = light_carrier
+			}
+		}
+	}
+
+	focus = {
+		id = CCC_Carriers
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = CCC_Escort_Carriers }
+
+		available_if_capitulated = yes
+
+		x = 36
+		y = 6
+
+		cost = 10
+		ai_will_do = { factor = 10 }
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = carrier_research
+				bonus = 0.5
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
